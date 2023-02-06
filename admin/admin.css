@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 
-.container-fluid{
-    margin-bottom: 0;
-}
+
 *{
     margin: 0;
     padding: 0;
@@ -25,9 +23,11 @@ body{
     background-size: 100vh;
     font-family: 'Roboto';
     width: 100%;
-    height: 100vh;
     margin: 0;
     
+}
+.container-fluid{
+    margin-bottom: 0;
 }
 
 section{
