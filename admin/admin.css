@@ -25,7 +25,6 @@ body{
     background-size: 100vh;
     font-family: 'Roboto';
     width: 100%;
-    height: 100vh;
     margin: 0;
     
 }
@@ -612,7 +611,6 @@ section{
     font-weight: bold;
     text-decoration: none;
     padding: 0 1rem;
-    
 }
 .club_heading{
     text-align: center;
@@ -645,11 +643,12 @@ section{
     width: 250px;
     padding-left: 20px;
     height: 100vh;
-    background-color: rgb(2,0,36);
+    background-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(252,252,252,1) 100%, rgba(0,212,255,1) 100%);
   }
   
   .aside a {
     font-size: 16px;
+    font-weight: bold;
     color: #fff;
     display: block;
     padding: 12px;
@@ -659,7 +658,7 @@ section{
   }
   
   .aside a:hover {
-    color: #3f5efb;
+    color: black;
     background: #fff;
     outline: none;
     background-color: #fff;
@@ -694,6 +693,7 @@ section{
   }
   
   .aside p {
+    font-weight: bold;
     margin: 0;
     padding: 40px;
   }
