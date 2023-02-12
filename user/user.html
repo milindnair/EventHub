@@ -8,7 +8,7 @@
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <title>Admin Page</title>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="./user.css">
     <title>Admin Page</title>
 </head>
 <body>
@@ -37,23 +37,30 @@
               </div>
             </div>
         </nav>
+
+        <div class="calendar">
+          <div class="calendar-header">
+            <button class="btn-prev">Prev</button>
+            <h2 class="month-year"></h2>
+            <button class="btn-next">Next</button>
+          </div>
+          <table class="calendar-body">
+            <thead>
+              <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+            </thead>
+            <tbody id="calendar-dates"></tbody>
+          </table>
+        </div>
         
         
-  <div class="aside"style="margin-top:0";>
-    <p style="text-align: center;">Name of Committee and Logo</p>
-    <a href="#">
-      <i class="fa fa-user-o" aria-hidden="true">Add an event</i>      
-    </a>
-    <a href="#"><i class="fa fa-laptop" aria-hidden="true"> Modify Events
-    </i>
-  </a>
-    <a href="#">
-      <i class="fa fa-clone" aria-hidden="true"> Room Availability</i>
-    </a>
-    <a href="#">
-      <i class="fa fa-clone" aria-hidden="true">Social Media and portals pages(bottom)</i>
-     
-    </a>
-  </div>    
+<script src="./user.js"></script>
 </body>
 </html>
