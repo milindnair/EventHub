@@ -52,8 +52,20 @@ function showCalendar(month, year) {
   }
   tbl += `</tr>`;
   calendarDates.innerHTML = tbl;
-
   monthYear.innerHTML = months[month] + ' ' + year;
+
+  var selectedCells = document.querySelectorAll('td');
+  var modal = document.getElementById('myModal');
+  var btn = document.getElementsByClassName("close")[0];
+  btn.onclick = function() {
+    modal.style.display = "none";
+}
+  selectedCells.forEach(cell => {
+    cell.addEventListener('click', function() {
+      
+      modal.style.display = "block";
+    });
+  });
 }
 
 showCalendar(currentMonth, currentYear);
