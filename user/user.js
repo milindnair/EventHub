@@ -1,37 +1,37 @@
-const calendar = document.querySelector('.calendar');
-const monthYear = calendar.querySelector('.month-year');
-const btnPrev = calendar.querySelector('.btn-prev');
-const btnNext = calendar.querySelector('.btn-next');
-const calendarBody = calendar.querySelector('.calendar-body');
-const calendarDates = calendar.querySelector('#calendar-dates');
+const calendar = document.querySelector(".calendar");
+const monthYear = calendar.querySelector(".month-year");
+const btnPrev = calendar.querySelector(".btn-prev");
+const btnNext = calendar.querySelector(".btn-next");
+const calendarBody = calendar.querySelector(".calendar-body");
+const calendarDates = calendar.querySelector("#calendar-dates");
 
 let date = new Date();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
 
 const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
-btnPrev.addEventListener('click', () => {
-  currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
-  currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+btnPrev.addEventListener("click", () => {
+  currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
+  currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
   showCalendar(currentMonth, currentYear);
 });
 
-btnNext.addEventListener('click', () => {
-  currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+btnNext.addEventListener("click", () => {
+  currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
   currentMonth = (currentMonth + 1) % 12;
   showCalendar(currentMonth, currentYear);
 });
@@ -52,17 +52,19 @@ function showCalendar(month, year) {
   }
   tbl += `</tr>`;
   calendarDates.innerHTML = tbl;
-  monthYear.innerHTML = months[month] + ' ' + year;
+  monthYear.innerHTML = months[month] + " " + year;
 
-  var selectedCells = document.querySelectorAll('td');
-  var modal = document.getElementById('myModal');
+  var selectedCells = document.querySelectorAll("td");
+  var modal = document.getElementById("myModal");
   var btn = document.getElementsByClassName("close")[0];
-  btn.onclick = function() {
+  btn.onclick = function (cell) {
     modal.style.display = "none";
-}
-  selectedCells.forEach(cell => {
-    cell.addEventListener('click', function() {
-      
+    selectedCells.forEach((cell) => (cell.style.backgroundColor = "transparent"));
+  };
+  selectedCells.forEach((cell) => {
+    cell.addEventListener("click", function () {
+      cell.style.backgroundColor = "black";
+
       modal.style.display = "block";
     });
   });

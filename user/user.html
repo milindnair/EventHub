@@ -12,9 +12,10 @@
     <title>Admin Page</title>
 </head>
 <body>
-  <div id="stars" style="z-index: -1; height:0; background: transparent;" ></div>
+  <section class="wrapper">
+  <!-- <div id="stars" style="z-index: -1; height:0; background: transparent;" ></div>
         <div id="stars2" style="z-index: -1; height:0; background: transparent;"></div>
-        <div id="stars3" style="z-index: -1; height:0; background: transparent;"></div>
+        <div id="stars3" style="z-index: -1; height:0; background: transparent;"></div> -->
   
         <nav class="navbar navbar-expand-lg  " style="background: rgb(2,0,36);
         background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(252,252,252,1) 100%, rgba(0,212,255,1) 100%);">
@@ -38,6 +39,10 @@
             </div>
         </nav>
 
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+
         <div class="calendar">
           <div class="calendar-header">
             <button class="btn-prev">Prev</button>
@@ -57,19 +62,22 @@
               </tr>
             </thead>
             <tbody id="calendar-dates"></tbody>
-            <div id="myModal" class="modal">
-
-              <!-- Modal content -->
-              <div class="modal-content">
-                <span class="close">×</span>
-                <p>Some text in the Modal..</p>
-              </div>
             
-            </div>
           </table>
+          
         </div>
+        <!-- <div id="myModal" class="modal"> -->
+
+          <!-- Modal content -->
+          <div class="modal-content" id="myModal">
+            <span class="close">×</span>
+            <p>Some text in the Modal..</p>
+          </div>
         
+        <!-- </div> -->
         
+      </section>
 <script src="./user.js"></script>
+
 </body>
 </html>
