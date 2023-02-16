@@ -57,14 +57,24 @@ function showCalendar(month, year) {
   var selectedCells = document.querySelectorAll("td");
   var modal = document.getElementById("myModal");
   var btn = document.getElementsByClassName("close")[0];
-  btn.onclick = function (cell) {
+  var previousCell = null;
+
+  btn.onclick = function () {
     modal.style.display = "none";
-    selectedCells.forEach((cell) => (cell.style.backgroundColor = "transparent"));
+    selectedCells.forEach(
+      (cell) => (cell.style.backgroundColor = "transparent")
+    );
+    previousCell = null;
   };
+
   selectedCells.forEach((cell) => {
     cell.addEventListener("click", function () {
-      cell.style.backgroundColor = "black";
+      if (previousCell !== null) {
+        previousCell.style.backgroundColor = "transparent";
+      }
 
+      cell.style.backgroundColor = "black";
+      previousCell = cell;
       modal.style.display = "block";
     });
   });
