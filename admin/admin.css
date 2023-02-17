@@ -2,11 +2,9 @@
 @import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:300');
 
-<<<<<<< Updated upstream
 .container-fluid{
     margin-bottom: 0;
 }
-=======
 body {
     height: 100vh;
     background-repeat: no-repeat;
@@ -165,7 +163,6 @@ body {
     transform: rotateY(180deg);
 }
 
->>>>>>> Stashed changes
 *{
     margin: 0;
     padding: 0;
@@ -183,7 +180,6 @@ html{
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-<<<<<<< Updated upstream
 body{
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
     background-size: 100vh;
@@ -191,11 +187,9 @@ body{
     width: 100%;
     margin: 0;
     
-=======
-
+}
 .container-fluid{
     margin-bottom: 0;
->>>>>>> Stashed changes
 }
 
 section{
@@ -762,7 +756,6 @@ section{
     494px 1957px #fff, 1296px 431px #fff, 175px 1507px #fff, 831px 121px #fff,
     498px 1947px #fff, 617px 880px #fff, 240px 403px #fff;
 }
-<<<<<<< Updated upstream
 
 
 @keyframes animStar {
@@ -935,5 +928,3 @@ height: 100%;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'),
   url('http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff') format('woff');
 }
-=======
->>>>>>> Stashed changes
