@@ -9,7 +9,9 @@
 }
 
 body {
+
     height: 70vh;
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_2t/9192.png');
     background-repeat: no-repeat;
     background-size: 200vh;
     font-family: 'Roboto', sans-serif;
@@ -792,4 +794,8 @@ section{
     width:100%;
     object-fit: cover;
     filter: brightness(0.6);
+
   }
+
+  }
+
