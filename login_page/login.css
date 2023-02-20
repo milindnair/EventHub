@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Aboreto', cursive;
+    font-family: 'Roboto', sans-serif;
     
 }
 
@@ -19,7 +19,7 @@ html{
     background: transparent; /* make scrollbar transparent */
 }
 body{
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-weight: 300;
         font-size: 15px;
         line-height: 1.7;
@@ -676,7 +676,7 @@ h6 span{
   border-radius: 50%;
   color: #ffeba7;
   background-color: #102770;
-  font-family: 'unicons';
+  font-family: 'Roboto', sans-serif;
   content:" ";
   z-index: 20;
   top: -10px;
