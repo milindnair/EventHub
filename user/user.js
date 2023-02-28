@@ -59,6 +59,10 @@ function showCalendar(month, year) {
   var btn = document.getElementsByClassName("close")[0];
   var previousCell = null;
 
+  selectedCells.forEach(function (cell) {
+    cell.style.width = "40px";
+  }
+  );
   btn.onclick = function () {
     modal.style.display = "none";
     selectedCells.forEach(

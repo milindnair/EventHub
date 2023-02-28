@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
-* {
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');* {
     margin: 0;
     padding: 0;
     border: 0;
     outline: 0;
     list-style: none;
     box-sizing: border-box;
+    font-family: 'Cinzel', serif;
 }
 
 body {
@@ -24,7 +24,6 @@ body {
     background: rgba(10, 10, 10, .65);
     box-shadow: 0 8px 32px rgb(2, 4, 24);
     border-right: 2px solid rgba(255, 255, 255, .09);
-    transition: .4s ease-in-out;
 }
 .logo{
     padding:50px;
@@ -435,7 +434,7 @@ h2{
     width: 2px;
     height: 2px;
     background: transparent;
-    animation: animStar 100s linear infinite;
+    animation: animStar 75s linear infinite;
     box-shadow: 1448px 320px #fff, 1775px 1663px #fff, 332px 1364px #fff,
     878px 340px #fff, 569px 1832px #fff, 1422px 1684px #fff, 1946px 1907px #fff,
     121px 979px #fff, 1044px 1069px #fff, 463px 381px #fff, 423px 112px #fff,
