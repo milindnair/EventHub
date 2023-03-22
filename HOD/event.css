@@ -13,50 +13,40 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Cinzel';
 }
 
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    background: rgba(10, 10, 10, .65);
-    box-shadow: 0 8px 32px rgb(2, 4, 24);
-    border-right: 2px solid rgba(255, 255, 255, .09);
-    transition: .4s ease-in-out;
+.calendar{
+    margin:3vh;
+    background-color:yellow;
+    height:15vh;
+    width:40vh;
+    padding:2vh;
+    float:left;
 }
-.logo{
-    padding:50px;
-
+.notify{
+    margin:3vh;
+    background-color:yellow;
+    height:15vh;
+    width:40vh;
+    padding:2vh;
+   float:left;
 }
-.info{
-    height:50px;
+.trash{
+    margin:3vh;
+    background-color:yellow;
+    height:15vh;
+    width:40vh;
+    padding:2vh;
+    float: left;
 }
-h2{
-    margin-top: 20px;
-    color:white;
-    padding: 9px;
-} 
- h5{
-    padding:20px;
-    color:white
+h3{
+    font-weight: bold;
+    padding-left:8vh;
+    padding-top:2vh;
+    color:black;
+    font-display: center;
 }
-.calendar:hover{
-    width: 100%;
-    background: #ff328e;
-} 
-.calendar:active{
-    background: #ff328e;
-}
-.notify:hover{
-    width: 100%;
-    background: #ff328e;
-} 
-.notify:active{
-    background: #ff328e;
-}
-
 .stars{
     height: 100vh;
 }
