@@ -24,17 +24,7 @@ const months = [
   "December",
 ];
 
-btnPrev.addEventListener("click", () => {
-  currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
-  currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-  showCalendar(currentMonth, currentYear);
-});
 
-btnNext.addEventListener("click", () => {
-  currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
-  currentMonth = (currentMonth + 1) % 12;
-  showCalendar(currentMonth, currentYear);
-});
 
 function showCalendar(month, year) {
   let firstDay = new Date(year, month).getDay();
@@ -57,7 +47,22 @@ function showCalendar(month, year) {
   var selectedCells = document.querySelectorAll("td");
   var modal = document.getElementById("myModal");
   var btn = document.getElementsByClassName("close")[0];
+  
   var previousCell = null;
+
+  btnPrev.addEventListener("click", () => {
+    currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
+    currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+    modal.style.display = "none";
+    showCalendar(currentMonth, currentYear);
+  });
+  
+  btnNext.addEventListener("click", () => {
+    currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
+    currentMonth = (currentMonth + 1) % 12;
+    modal.style.display = "none";
+    showCalendar(currentMonth, currentYear);
+  });
 
   selectedCells.forEach(function (cell) {
     cell.style.width = "40px";
@@ -80,8 +85,14 @@ function showCalendar(month, year) {
       cell.style.backgroundColor = "black";
       previousCell = cell;
       modal.style.display = "block";
+      document.getElementById("date").innerHTML = cell.innerHTML + " " + months[month] + " " + year;
+
     });
   });
+
+
 }
 
 showCalendar(currentMonth, currentYear);
+
+
