@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Cinzel', serif;
 
   
 }
@@ -651,11 +652,7 @@ section{
   outline: none;
 }
 
-.btn-prev:hover,
-.btn-next:hover{
-  /* font-size: 1.5rem;
-  transition: 1s ease-in-out; */
-}
+
 
 .month-year {
   color:goldenrod;
@@ -679,7 +676,6 @@ border: 1px solid rgba(255, 255, 255, 1);
 .calendar-body td {
   color:white;
   border: 1px solid #ccc;
-  padding: 0.5rem;
   text-align: center;
   vertical-align: middle;
 }
@@ -701,6 +697,13 @@ border: 1px solid rgba(255, 255, 255, 1);
   width: 80%;
 }
 
+.modal-content p {
+  text-align: left;
+  font-weight: 0px;
+  font-size: 20px;
+  padding-top: 15px ;
+}
+
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -714,5 +717,9 @@ border: 1px solid rgba(255, 255, 255, 1);
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.calendar-body .td{
+  width:10px;
 }
 

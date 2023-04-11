@@ -1,205 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
-@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300');
 
-.container-fluid{
-    margin-bottom: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.sidebar{
+  padding-top:5%;
+  background:rgb(204, 255, 51);
+  width:20%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height:100%;
+}
+.choices{
+margin-top:7%;
+padding:3%;
+}
+.logo{
+  width:100%;
+  height:20%;
+}
+.choices:hover{
+background:rgb(255, 0, 102);
 }
 body {
     height: 100vh;
     background-repeat: no-repeat;
-    background-size: 200vh;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    background-size: cover;
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
+    font-family: 'Cinzel';
 }
-
-.sidebar {
-    width: 360px;
-    height: 200%;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    background: rgba(10, 10, 10, .65);
-    box-shadow: 0 8px 32px rgb(2, 4, 24);
-    border-right: 2px solid rgba(255, 255, 255, .09);
-    transition: .4s ease-in-out;
+img{
+  /* padding-left:2%; */
+  margin:0;
+ z-index: -1;
+ float:left;
+ width:10%;
+ height:5%;
 }
-
-.sidebar.open {
-    width: 360px;
-}
-
-.sidebar .logo {
-    width: 100%;
-    height: 240px;
-    padding: 40px 0;
-    display: grid;
-    align-items: center;
-    justify-items: center;
-}
-
-.sidebar .logo img {
-    width: 96px;
-    transition: .4s;
-}
-
-
-
-.sidebar .logo h3 {
-    color: #fff;
-    font-size: 36px;
-    margin-top: 12px;
-    font-variant: small-caps;
-    pointer-events: none;
-    scale: 0;
-    opacity: 0;
-}
-
-.sidebar.open .logo h3 {
-    scale: 1;
-    opacity: 1;
-    transition: .4s;
-    transition-delay: .2s;
-}
-
-.sidebar .nav-title {
-    color: #dadada;
-    margin: 40px 0 18px;
-    pointer-events: none;
-    opacity: 0;
-}
-
-.sidebar.open .nav-title {
-    opacity: 1;
-    transition: .4s;
-    transition-delay: .2s;
-}
-
-.sidebar nav {
-    padding: 0 30px;
-}
-
-.sidebar nav .nav-item {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 4px;
-    width: 100%;
-    height: 56px;
-    padding: 0 16px;
-    margin: 8px 0;
-    color: #fff;
-    transition: .3s;
-}
-
-.sidebar nav .nav-item.active {
-    background: #ff328e !important;
-}
-
-.sidebar nav .nav-item:hover {
-    background: rgba(255, 255, 255, .1);
-}
-
-.sidebar nav .nav-item i {
-    font-size: 26px;
-}
-
-.sidebar nav .nav-item span {
-    font-size: 18px;
-    margin-left: 8px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.sidebar.open nav .nav-item span {
-    opacity: 1;
-    pointer-events: visible;
-    transition: .4s;
-    transition-delay: .2s;
-}
-
-.sidebar hr {
-    width: 100%;
-    height: 2px;
-    border-radius: 3px;
-    margin: 40px 0 50px;
-    background: rgba(255, 255, 255, .1);
-    opacity: 0;
-}
-
-.sidebar.open hr {
-    opacity: 1;
-    transition: .4s;
-}
-
-.sidebar .toggle {
-    cursor: pointer;
-    position: absolute;
-    color: #fff;
-    top: 180px;
-    right: -20px;
-    font-size: 38px;
-    line-height: 50%;
-    text-align: center;
-    border-radius: 50%;
-    padding: 2px 0 2px 2px;
-    background: linear-gradient(
-        90deg,
-        transparent 50%,
-        rgba(10, 10, 10, .65) 50%
-    );
-}
-
-.sidebar.open .toggle {
-    transform: translateY(45px);
-}
-
-.sidebar .toggle i {
-    transition: .4s linear;
-}
-
-.sidebar.open .toggle i {
-    transform: rotateY(180deg);
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    
-}
-
-html{
-    overflow-x:   hidden;
-    overflow-y:   scroll;
-}
-
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
-body{
-    background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
-    background-size: 100vh;
-    font-family: 'Roboto';
-    width: 100%;
-    margin: 0;
-}
-
-.container-fluid{
-    margin-bottom: 0;
-}
-.container-fluid{
-    margin-bottom: 0;
-}
-
-section{
-    width: 100%;
-  
-}
-
 .stars{
     height: 100vh;
 }
@@ -777,6 +622,7 @@ section{
     font-weight: bold;
     text-decoration: none;
     padding: 0 1rem;
+    
 }
 .club_heading{
     text-align: center;
@@ -803,138 +649,3 @@ section{
     object-fit: cover;
     filter: brightness(0.6);
   }
-.fa-2x {
-font-size: 2em;
-}
-.fa {
-position: relative;
-display: table-cell;
-width: 60px;
-  
-height: 36px;
-text-align: center;
-vertical-align: middle;
-font-size:20px;
-}
-
-
-.main-menu:hover,nav.main-menu.expanded {
-width:250px;
-overflow:visible;
-}
-
-.main-menu {
-background:#212121;
-border-right:1px solid #e5e5e5;
-position:absolute;
-top:0;
-bottom:0;
-height:100%;
-left:0;
-width:60px;
-overflow:hidden;
--webkit-transition:width .05s linear;
-transition:width .05s linear;
--webkit-transform:translateZ(0) scale(1,1);
-z-index:1000;
-}
-
-.main-menu>ul {
-margin:7px 0;
-}
-
-.main-menu li {
-position:relative;
-display:block;
-width:250px;
-}
-
-.main-menu li>a {
-position:relative;
-display:table;
-border-collapse:collapse;
-border-spacing:0;
-color:#999;
- font-family: arial;
-font-size: 14px;
-text-decoration:none;
--webkit-transform:translateZ(0) scale(1,1);
--webkit-transition:all .1s linear;
-transition:all .1s linear;
-  
-
-}
-  .aside p {
-    font-weight: bold;
-    margin: 0;
-    padding: 40px;
-  }
-
-
-.main-menu .nav-icon {
-position:relative;
-display:table-cell;
-width:60px;
-height:36px;
-text-align:center;
-vertical-align:middle;
-font-size:18px;
-}
-
-.main-menu .nav-text {
-position:relative;
-display:table-cell;
-vertical-align:middle;
-width:190px;
-  font-family: 'Titillium Web', sans-serif;
-}
-
-.main-menu>ul.logout {
-position:absolute;
-left:0;
-bottom:0;
-}
-
-.no-touch .scrollable.hover {
-overflow-y:hidden;
-}
-
-.no-touch .scrollable.hover:hover {
-overflow-y:auto;
-overflow:visible;
-}
-
-a:hover,a:focus {
-text-decoration:none;
-}
-
-nav {
--webkit-user-select:none;
--moz-user-select:none;
--ms-user-select:none;
--o-user-select:none;
-user-select:none;
-}
-
-nav ul,nav li {
-outline:0;
-margin:0;
-padding:0;
-}
-.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
-color:#fff;
-background-color:#000000;
-}
-.area {
-float: left;
-background: #e2e2e2;
-width: 100%;
-height: 100%;
-}
-@font-face {
-  font-family: 'Titillium Web';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Titillium WebLight'), local('TitilliumWeb-Light'),
-  url('http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff') format('woff');
-}

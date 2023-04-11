@@ -19,15 +19,16 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ms-auto">
-              <li class="nav-item ms-2">
-                <a class="nav-link "style="text-align:center" href="../about_us/about-us.html">About us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"style="text-align:center" href="../login_page/login.html">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"style="text-align:center" href="../Home/home.html">&#127968</a>
-              </li> 
+                <li class="nav-item">
+
+					<a class="nav-link "style="text-align:left" href="../about_us/about-us.html">About us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" style="text-align:left"href="../login_page/login.html">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link"style="text-align:left" href="../Home/home.html">&#127968</a>
+				</li>
             </ul>
           </div>
         </div>
@@ -50,38 +51,42 @@
 							<div class="card-3d-wrapper">
 								<div class="card-front">
 									<div class="center-wrap">
+										<form action="./auth.php" method="post">
 										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Log In</h4>
-											<div class="form-group">
-												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
+												<h4 class="mb-4 pb-3">Log In</h4>
+												<div class="form-group">
+													<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+													<i class="input-icon uil uil-at"></i>
+												</div>	
+												<div class="form-group mt-2">
+													<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+												<input  class="btn mt-4" name="check" type="submit" ></input>
+												<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
 											</div>
-											<a href="../user/user.html" class="btn mt-4">submit</a>
-                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
-				      					</div>
+										</form>
 			      					</div>
 			      				</div>
 								<div class="card-back">
 									<div class="center-wrap">
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Sign Up</h4>
-											<div class="form-group">
-												<input type="text" name="regname" class="form-style" placeholder="Your Full Name" id="regname" autocomplete="off">
-												<i class="input-icon uil uil-user"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="email" name="regemail" class="form-style" placeholder="Your Email" id="regemail" autocomplete="off">
-												<i class="input-icon uil uil-at" ></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="password" name="regpass" class="form-style" placeholder="Your Password" id="regpass" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<li  class="btn mt-4" onclick="ValidateEmail()">submit</li>
+											<form action="./auth.php" method="post">
+												<div class="form-group">
+													<input type="text" name="regname" class="form-style" placeholder="Your Full Name" id="regname" autocomplete="off">
+													<i class="input-icon uil uil-user"></i>
+												</div>	
+												<div class="form-group mt-2">
+													<input type="email" name="regemail" class="form-style" placeholder="Your Email" id="regemail" autocomplete="off">
+													<i class="input-icon uil uil-at" ></i>
+												</div>	
+												<div class="form-group mt-2">
+													<input type="password" name="regpass" class="form-style" placeholder="Your Password" id="regpass" autocomplete="off">
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+												<input  class="btn mt-4" name="save" type="submit" ></input>
+											</form>
 				      					</div>
 			      					</div>
 			      				</div>
