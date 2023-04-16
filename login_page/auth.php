@@ -36,8 +36,8 @@ if(isset($_POST['save']))
 
 if(isset($_POST['check']))
 {
-  $email = $_POST['regemail'];
-  $password = $_POST['regpass'];
+  $email = $_POST['logemail'];
+  $password = $_POST['logpass'];
 
   // Prepare statement
   $stmt = $conn->prepare("SELECT * FROM userdata WHERE email = ? AND password = ?");
@@ -51,6 +51,7 @@ if(isset($_POST['check']))
       exit();
     } else {
       echo "Login failed";
+      echo 'alert("Validation failed")';
     }
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
