@@ -14,3 +14,5 @@ productContainers.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 })
+
+const image = document.getElementsByClassName("club-thumb");
