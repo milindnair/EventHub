@@ -10,11 +10,11 @@
     <title>Create your Event</title>
 </head>
 <body>
-    <section class="wrapper">
+    <section class="wrapper"style="height:5%">
 
         <nav class="navbar navbar-expand-lg  " style="background:#00b3b3">
     
-          <div class="container-fluid ">
+          <div class="container-fluid" style="z-index: index -1;">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -37,70 +37,147 @@
         </nav>
     
     
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
+        <div id="stars" style="z-index: index -1;"></div>
+        <div id="stars2"style="z-index: index -1;"></div>
+        <div id="stars3"style="z-index: index -1;"></div>
     </section>
-    <div class="layout">
-      <div class="image"> 
-          <img src="../assets/event.svg" style="max-width:120% ; max-height:100%">
-          <img src="../assets/event_1.png" style="max-width:120% ; max-height:100% ; float:bottom ;margin-top:15%">
-         <img src="../assets/event_2.svg" style="max-width:120% ; max-height:100% ; float:bottom; margin-top:15%;margin-left:10%;">
+    <div id="booking" class="section"style="align:center;height:120%">
+      <div class="section-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7 col-md-push-5">
+              <div class="booking-cta">
+                <h1>Create your Event</h1>
+                <p>
+                  We are thrilled that you are about to create a new event and we do believe that you and your team will certianly be able
+                  to make this event a great success and a one to remember.
+                </p>
+                <h5>
+                  Please follow the steps mentioned below on how to plan about your event.
+                </h5>
+                <ul type="disc" style="color:white">
+                  <li><p>Fill the form alonside with all the necessary conditions mentioned</p></li>
+                  <li><p>Select the total number of rooms/halls/campus area that you require for the event</p></li>
+                  <li><p>Then click on room layout to view the rooms and book your rooms</p></li>
+                  <li><p>After that on submission a request will be send to HOD</p></li>
+                  <li><p>After the approval of event it shows up in the calendar</p></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 col-md-pull-7" style="background-color:rgb(255,153,0);margin-top:3%;">
+              <div class="booking-form"style="background-color:rgb(255, 173, 51);">
+                <form>
+                  <div class="form-group">
+                    <span class="form-label">Name of the Event</span>
+                    <input class="form-control" type="text" placeholder="Enter your Event Name">
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <span class="form-label">Start Date</span>
+                        <input class="form-control" type="date" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <span class="form-label">End Date</span>
+                        <input class="form-control" type="date" required>
+                      </div>
+                    </div>	
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <span class="form-label">Start Time</span>
+                        <input class="form-control" type="Time" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <span class="form-label">End Time</span>
+                        <input class="form-control" type="time" required>
+                      </div>
+                    </div>	
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <span class="form-label">Mode</span>
+                          <select class="form-control">
+                          <option>--:--</option>
+                          <option>Online</option>
+                          <option>Offline</option>
+                          <option>Hybrid</option>
+                          </select>
+                          <span class="select-arrow"></span>
+                          </div>
+                    </div>
+                    <div class="row">
+                      <h4 style="padding-left:17%"><b style="font-display:200%;align-items:center;color:#3e485c">Select Rooms for the Event</b></h4>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <span class="form-label">Room 1</span>
+                          <select class="form-control">
+                            <option>--:--</option>
+                            <option>Auditorium</option>
+                            <option>A202</option>
+                            <option>A225</option>
+                            <option>A325</option>
+                            <option>B113</option>
+                            <option>B415</option>
+                            <option>B507</option>
+                          </select>
+                          <span class="select-arrow"></span>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <span class="form-label">Room 2</span>
+                          <select class="form-control">
+                            <option>--:--</option>
+                            <option>Auditorium</option>
+                            <option>A202</option>
+                            <option>A225</option>
+                            <option>A325</option>
+                            <option>B113</option>
+                            <option>B415</option>
+                            <option>B507</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <span class="form-label">Room 3</span>
+                          <select class="form-control">
+                            <option>--:--</option>
+                            <option>Auditorium</option>
+                            <option>A202</option>
+                            <option>A225</option>
+                            <option>A325</option>
+                            <option>B113</option>
+                            <option>B415</option>
+                            <option>B507</option>
+                            </select>
+                            <span class="select-arrow"></span>
+                        </div>
+                      </div>
+                  </div>
+                                  <div class="form-group">
+                    <span class="form-label">Details the Event</span>
+                    <input class="form-control" type="text" placeholder="Enter Details about the event">
+                  </div>
+                  <div class="form-btn"style="padding-left:25%">
+                    <button class="submit-btn">Create the Event</button>
+                  </div>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="details">
-        <h2>HOLA! Glad to have you back &#129303;</h2>
-      </div>
-      <div class="form_layout">
-        <form>
-          <h4 style="padding-left:2%;">Get started with your new event</h4>  
-        <label for="EventName"><b style="font-display:200%;">Event Name</b></label><br>
-        <input type="text" placeholder="Name" id="EventName" style="height:5vh">
-        <br><br>
-
-        <label for="Date"><b style="font-display:200%;">Date</b></label><br>
-        <input type="Date" placeholder="Date" id="Date" style="height:5vh ;background-color:aqua">
-        <br><br>
-
-
-        <label for="Time"><b style="font-display:200%;">Time</b></label><br>
-        <b>Start Time</b>
-        <input type="Time" placeholder="Time" id="Time" style="height:5vh">
-        <b>End Time</b>
-        <input type="Time" placeholder="Time" id="Time" style="height:5vh">
-        <br><br>
-
-
-        <label for="Mode"><b style="font-display:200%;">Mode of Conduction</b></label><br>
-        <input type="text" placeholder="Online/Offline" id="Mode" style="height:5vh">
-        <br><br>
-
-        <label for="Organise"><b style="font-display:200%;">Is rooms needed for your event?</b></label><br>
-        <input type="text" placeholder="Yes/No" id="Organise" style="height:5vh">
-        <br><br>
-
-
-        <label for="Organise"><b style="font-display:200%;">If rooms are needed, mention total number of rooms</b></label><br>
-        <select name = "dropdown" style="background-color:aqua">
-        <option value = "None" selected>None</option>
-        <option value = "1">1</option>
-        <option value = "2">2</option>
-        <option value = "3">3</option>
-        <option value = "More than 3">For rooms more than 3,Please co-ordinate with HOD</option></select>
-        <br><br><br>
-
-
-        <label for="Room"><b style="font-display:200%;">Enter Seminar Hall Numbers needed for the event</b></label><br>
-        <input type="text" placeholder="Enter your Room Number" id="Room" style="height:5vh" textarea rows = "8" >
-        <br><br>
-
-
-        <label for="Mode"><b style="font-display:200%;">Details for the Event</b></label>
-        <br>
-        <textarea rows = "5" cols = "30" name = "description" style="background-color:rgb(0, 255, 255);"> </textarea>
-        <br><br>
-        </form>
     </div>
-  </div>
 </body>
 </html>
    
