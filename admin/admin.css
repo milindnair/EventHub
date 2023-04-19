@@ -667,7 +667,7 @@ img{
     color: white;
 }
 
-.nav-pills li a{
+.nav-pills li button{
     color: rgb(5, 5, 5);
     font-size: 1.2rem;
     font-weight: bold;
@@ -680,5 +680,7 @@ img{
     /* background-color: rgb(5, 5, 5); */
     color: white;
 }
+
+
 
 

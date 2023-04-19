@@ -40,56 +40,46 @@
               </div>
           </nav>
   </section>
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:100%">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <div class="sidebar-top-container">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="58v23n"></button>
-          <ul class="dropdown-menu" >
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Sign Out</a></li>
-          </ul>
+  <div style="display: flex;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:100%">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <div class="sidebar-top-container">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="58v23n"></button>
+            <ul class="dropdown-menu" >
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+            </ul>
+          </div>
+        <div class="profile-pic">        
+          <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">        
         </div>
-      <div class="profile-pic">
-        
-        <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">
-        
-      </div>
-      <h3>Admin Name</h3>
-
+        <h3>Admin Name</h3>
+      </div>    
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;">
+          <a class="nav-link active text-white" id="calendar-link">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;">
+          <a class="nav-link text-white" id="create-event-link">Create Event</a>
+        </li>
+        <li class="nav-item">
+          <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px;">    
+          <a class="nav-link text-white" id="modify-event-link">Modify Event</a>
+        </li>
+        <li class="nav-item">
+          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
+          <a class="nav-link text-white" id="delete-event-link">Delete Event</a>
+        </li>
+      </ul>   
     </div>
-  
-    
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item" >
-        <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;" >
-        <a href="#" class="nav-link active" aria-current="page">          
-          Calendar
-        </a>
-      </li>
-      <li>
-        <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;" >
-        <a href="#" class="nav-link text-white">          
-          Create Event
-        </a>
-      </li>
-      <li>
-        <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px;" >    
-        <a href="#" class="nav-link text-white">
-                Modify Event
-        </a>
-      </li>
-      <li>
-        <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;" >    
-        <a href="#" class="nav-link text-white">
-                Delete Event
-        </a>
-      </li>
-    </ul>
-    
-    
+    <div id="content" style="height: 100vh;"></div>
   </div>
-
+  
+</div>
+  <script src="./admin.js"></script>
   </body>
 </html>  
