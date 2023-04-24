@@ -20,7 +20,7 @@ if(isset($_POST['new-event'])){
     $event_start_time = $_POST['event-start-time'];
     $event_end_time = $_POST['event-end-time'];
     $event_mode = $_POST['event-mode'];
-    $event_venue = $_POST['event-venue'];    
+    $event_venue = implode(',', $_POST['event-venue']);
     $event_description = $_POST['event-description'];  
     $event_link = $_POST['event-link'];
 

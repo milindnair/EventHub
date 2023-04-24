@@ -1,16 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    list-style: none;
-    box-sizing: border-box;
-}
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Cinzel', serif;
+        
+    }
+
 .sidebar{
   padding-top:5%;
   background:rgb(204, 255, 51);
@@ -19,9 +17,11 @@
   border-bottom-right-radius: 20px;
   height:100%;
 }
+
 .choices{
 margin-top:7%;
 padding:3%;
+cursor: pointer;
 }
 .logo{
   width:100%;
@@ -35,7 +35,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
-    font-family: 'Cinzel';
+    font-family: 'Cinzel', serif;
 }
 img{
   /* padding-left:2%; */
@@ -615,6 +615,21 @@ img{
     }
 }
 
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.modal-content p {
+  text-align: left;
+  font-weight: 0px;
+  font-size: 20px;
+  padding-top: 15px ;
+}
 
 .nav-link{
     color: rgb(5, 5, 5);
@@ -624,28 +639,146 @@ img{
     padding: 0 1rem;
     
 }
-.club_heading{
-    text-align: center;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    font-size: 2.5rem;
+
+.sidebar-top-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+    background-color: #fff;
+    
+}
+
+.dropdown{
+    position: absolute;
+    left:200px;
+    top:150px;
+}
+
+.dropdown-menu li a:hover{
+    background-color: rgb(5, 5, 5);
+    color: white;
+}
+
+.nav-pills{
+    margin-top: 50px;
+}
+
+.nav-pills li{
+    height:90px;
+    padding:10px;
+    text-align: left;
+}
+
+.nav-pills li:hover{
+    /* background-color: rgb(5, 5, 5); */
+    color: white;
+}
+
+.nav-pills li button{
+    color: rgb(5, 5, 5);
+    font-size: 1.2rem;
     font-weight: bold;
-    color: whitesmoke;
+    text-decoration: none;
+    padding: 0 1rem;
+    margin-left: 50px;
 }
 
-.c-main{
-    width:96vw;
+.nav-pills li:active{
+    /* background-color: rgb(5, 5, 5); */
+    color: white;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
     margin: 0 auto;
-}
-
-.c-item {
-    height: 480px;
-    width: 100vw;
   }
   
-  .c-img {
-    height: 100%;
-    width:100%;
-    object-fit: cover;
-    filter: brightness(0.6);
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    color:#F3F5F9;
   }
+  
+  .btn-prev,
+  .btn-next {
+    color:gold;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  
+  
+  .month-year {
+    color:goldenrod;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .calendar-body {
+    width: 100%;
+    border-collapse: collapse;
+    /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  }
+  
+  .calendar-body th,
+  .calendar-body td {
+    color:white;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .calendar-body td {
+    height: 5rem;
+  }
+  
+  @media (max-width: 767px) {
+    .calendar {
+      width: 90%;
+    }
+  }
+  
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .calendar-body .td{
+    width:10px;
+  }
+
+
+
