@@ -88,7 +88,7 @@ include './admin.php';
       </ul>   
     </div>
     <div id="content" style="height: 100vh; width:90%">
-      <div class="calendar" style="width: 90%;">
+      <div class="calendar">
         <div class="calendar-header">
           <button class="btn-prev">Prev</button>
           <h2 class="month-year"></h2>
@@ -112,13 +112,18 @@ include './admin.php';
         
       </div>
       <!-- <div id="myModal" class="modal"> -->
-    
+
         <!-- Modal content -->
-        <div class="modal-content" id="myModal" style="width: 90%;margin-top: 15px;">
+        <div class="modal-content" id="myModal">
           <span class="close">×</span>
           <h2 id="date"></h2>
           <p>No events listed for now :(</p>
-        </div></div>
+          <div id="event-list"></div>
+
+        </div>
+      <!-- <div id="myModal" class="modal"> -->
+    
+        
   </div>
   
 

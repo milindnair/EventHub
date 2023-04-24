@@ -1,16 +1,3 @@
-// const selectedItem = document.querySelectorAll(".nav-link");
-
-// for (let i = 0; i < selectedItem.length; i++) {
-//     selectedItem[i].addEventListener("click", function() {
-//         console.log("clicked");
-//         const current = document.querySelector(".active");
-//         if (current) {
-//             current.classList.remove("active");
-//         }
-//         this.classList.add("active");
-//     });
-// }
-
 const calendar = document.querySelector(".calendar");
 const monthYear = calendar.querySelector(".month-year");
 const btnPrev = calendar.querySelector(".btn-prev");
@@ -60,7 +47,7 @@ function showCalendar(month, year) {
   var selectedCells = document.querySelectorAll("td");
   var modal = document.getElementById("myModal");
   var btn = document.getElementsByClassName("close")[0];
-  
+
   var previousCell = null;
 
   btnPrev.addEventListener("click", () => {
@@ -69,7 +56,7 @@ function showCalendar(month, year) {
     modal.style.display = "none";
     showCalendar(currentMonth, currentYear);
   });
-  
+
   btnNext.addEventListener("click", () => {
     currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
     currentMonth = (currentMonth + 1) % 12;
@@ -99,51 +86,60 @@ function showCalendar(month, year) {
       previousCell = cell;
       modal.style.display = "block";
       document.getElementById("date").innerHTML = cell.innerHTML + " " + months[month] + " " + year;
+      const selectedDate = year + "-" + (month + 1) + "-" + cell.innerHTML;
 
+      // Create a new XMLHttpRequest object
+      const xhr = new XMLHttpRequest();
+
+      // Set up the request
+      xhr.open("GET", "/EventHub/event_form/get_event.php?date=" + selectedDate);
+
+      // Set up the onload callback
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          // Parse the response JSON data
+          // console.log(xhr.responseText);
+          const eventData = JSON.parse(xhr.responseText);
+          console.log(eventData);
+
+          
+
+         
+          const eventList = document.getElementById("event-list");
+
+          // Clear any previously displayed events
+          eventList.innerHTML = "";
+
+          // Create a new list item for each event and add it to the list
+          eventData.forEach(function (event) {
+            const listItem = document.createElement("li");
+            const eventName = document.createElement("h3");
+            const eventDesc = document.createElement("p");
+            const eventDateTime = document.createElement("p");
+            const eventVenue = document.createElement("p");
+
+            eventName.innerHTML = event.event_name;
+            eventDesc.innerHTML = event.event_description;
+            eventDateTime.innerHTML = event.event_start_date + " " + event.event_start_time + " - " + event.event_end_date + " " + event.event_end_time;
+            eventVenue.innerHTML = "Venue: " + event.event_venue;
+
+            listItem.appendChild(eventName);
+            listItem.appendChild(eventDesc);
+            listItem.appendChild(eventDateTime);
+            listItem.appendChild(eventVenue);
+
+            eventList.appendChild(listItem);
+          });
+        }
+      };
+
+      // Send the request
+      xhr.send();
     });
-  });
 
+
+  });
 
 }
 
 showCalendar(currentMonth, currentYear);
-
-
-
-
-
-
-// const calendarLink = document.getElementById("calendar-link");
-// const createEventLink = document.getElementById("create-event-link");
-// const modifyEventLink = document.getElementById("modify-event-link");
-// const deleteEventLink = document.getElementById("delete-event-link");
-
-// calendarLink.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     loadContent("./calendar.php");
-// });
-
-// createEventLink.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     loadContent("../event_form/create_event.php");
-// });
-
-// modifyEventLink.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     loadContent("./modify_event.php");
-// });
-
-// deleteEventLink.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     loadContent("./delete_event.php");
-// });
-
-// function loadContent(url) {
-//     fetch(url)
-//         .then(response => response.text())
-//         .then(html => {
-//             const contentDiv = document.getElementById("content");
-//             contentDiv.innerHTML = html;
-//         })
-//         .catch(error => console.log(error));
-// }
