@@ -6,6 +6,9 @@
 
 // For example:
 
+  
+
+
 
 $content = <<<HTML
 <div id="booking" class="section"style="align:center;height:120%">
@@ -33,22 +36,22 @@ $content = <<<HTML
             </div>
             <div class="col-md-4 col-md-pull-7" style="background-color:rgb(255,153,0);margin-top:3%;">
               <div class="booking-form"style="background-color:rgb(255, 173, 51);">
-                <form>
+                <form action="./new_event.php" method="post">
                   <div class="form-group">
                     <span class="form-label">Name of the Event</span>
-                    <input class="form-control" type="text" placeholder="Enter your Event Name">
+                    <input class="form-control" type="text" name="event-name" placeholder="Enter your Event ame">
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
                         <span class="form-label">Start Date</span>
-                        <input class="form-control" type="date" required>
+                        <input class="form-control" type="date" name="event-start-date" required>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <span class="form-label">End Date</span>
-                        <input class="form-control" type="date" required>
+                        <input class="form-control" type="date" name="event-end-date" required>
                       </div>
                     </div>	
                   </div>
@@ -56,13 +59,13 @@ $content = <<<HTML
                     <div class="col-sm-6">
                       <div class="form-group">
                         <span class="form-label">Start Time</span>
-                        <input class="form-control" type="Time" required>
+                        <input class="form-control" type="Time" name="event-start-time" required>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <span class="form-label">End Time</span>
-                        <input class="form-control" type="time" required>
+                        <input class="form-control" type="time" name="event-end-time" required>
                       </div>
                     </div>	
                   </div>
@@ -70,7 +73,7 @@ $content = <<<HTML
                     <div class="col-sm-4">
                       <div class="form-group">
                         <span class="form-label">Mode</span>
-                          <select class="form-control">
+                          <select class="form-control" name="event-mode">
                           <option>--:--</option>
                           <option>Online</option>
                           <option>Offline</option>
@@ -80,64 +83,68 @@ $content = <<<HTML
                           </div>
                     </div>
                     <div class="row">
-                      <h4 style="padding-left:17%"><b style="font-display:200%;align-items:center;color:#3e485c">Select Rooms for the Event</b></h4>
+                      <h4 style="padding-left:17%"><b style="font-display:180%;align-items:center;color:#3e485c;padding-top:2px">Select Rooms for the Event</b></h4>
                       <div class="col-sm-4">
-                        <div class="form-group">
-                          <span class="form-label">Room 1</span>
-                          <select class="form-control">
-                            <option>--:--</option>
-                            <option>Auditorium</option>
-                            <option>A202</option>
-                            <option>A225</option>
-                            <option>A325</option>
-                            <option>B113</option>
-                            <option>B415</option>
-                            <option>B507</option>
-                          </select>
-                          <span class="select-arrow"></span>
-                        </div>
+                          <div class="form-group">
+                              <span class="form-label">Room 1</span>
+                              <select class="form-control" name="event-venue[]">
+                                  <option>--:--</option>
+                                  <option>Auditorium</option>
+                                  <option>A202</option>
+                                  <option>A225</option>
+                                  <option>A325</option>
+                                  <option>B113</option>
+                                  <option>B415</option>
+                                  <option>B507</option>
+                              </select>
+                              <span class="select-arrow"></span>
+                          </div>
                       </div>
                       <div class="col-sm-4">
-                        <div class="form-group">
-                          <span class="form-label">Room 2</span>
-                          <select class="form-control">
-                            <option>--:--</option>
-                            <option>Auditorium</option>
-                            <option>A202</option>
-                            <option>A225</option>
-                            <option>A325</option>
-                            <option>B113</option>
-                            <option>B415</option>
-                            <option>B507</option>
-                            </select>
-                            <span class="select-arrow"></span>
-                        </div>
+                          <div class="form-group">
+                              <span class="form-label">Room 2</span>
+                              <select class="form-control" name="event-venue[]">
+                                  <option>--:--</option>
+                                  <option>Auditorium</option>
+                                  <option>A202</option>
+                                  <option>A225</option>
+                                  <option>A325</option>
+                                  <option>B113</option>
+                                  <option>B415</option>
+                                  <option>B507</option>
+                              </select>
+                              <span class="select-arrow"></span>
+                          </div>
                       </div>
                       <div class="col-sm-4">
-                        <div class="form-group">
-                          <span class="form-label">Room 3</span>
-                          <select class="form-control">
-                            <option>--:--</option>
-                            <option>Auditorium</option>
-                            <option>A202</option>
-                            <option>A225</option>
-                            <option>A325</option>
-                            <option>B113</option>
-                            <option>B415</option>
-                            <option>B507</option>
-                            </select>
-                            <span class="select-arrow"></span>
-                        </div>
+                          <div class="form-group">
+                              <span class="form-label">Room 3</span>
+                              <select class="form-control" name="event-venue[]">
+                                  <option>--:--</option>
+                                  <option>Auditorium</option>
+                                  <option>A202</option>
+                                  <option>A225</option>
+                                  <option>A325</option>
+                                  <option>B113</option>
+                                  <option>B415</option>
+                                  <option>B507</option>
+                              </select>
+                              <span class="select-arrow"></span>
+                          </div>
                       </div>
                   </div>
-                                  <div class="form-group">
+
+                  <div class="form-group">
                     <span class="form-label">Details the Event</span>
-                    <input class="form-control" type="text" placeholder="Enter Details about the event">
+                    <input class="form-control" type="text" name="event-description" placeholder="Enter Details about the event">
                   </div>
-                  <div class="form-btn"style="padding-left:25%">
-                    <button class="submit-btn">Create the Event</button>
+                  <div class="form-group">Poster</span>
+                    <input class="form-control" type="text" name="event-link" placeholder="Enter Poster Links if any">
                   </div>
-                </div>
+
+                  <div class="form-btn"style="padding:25%">
+                  <input  class="submit-btn" name="new-event" type="submit" ></input>                  
+                  </div>
                 </form>
               </div>
             </div>
