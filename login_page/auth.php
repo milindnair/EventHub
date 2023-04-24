@@ -3,7 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "eventhub";
-
+session_start();
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -23,10 +23,11 @@ if(isset($_POST['save']))
   $stmt->bind_param("sss", $fullname, $email, $password);
 
   if ($stmt->execute()) {
-    echo "New record created successfully";
+    echo "New record created successfully";    
     header("Location: ../Home/home.html");
     exit();
   } else {
+    $_SESSION['logged_in'] = false;
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
 
@@ -36,8 +37,8 @@ if(isset($_POST['save']))
 
 if(isset($_POST['check']))
 {
-  $email = $_POST['regemail'];
-  $password = $_POST['regpass'];
+  $email = $_POST['logemail'];
+  $password = $_POST['logpass'];
 
   // Prepare statement
   $stmt = $conn->prepare("SELECT * FROM userdata WHERE email = ? AND password = ?");
@@ -47,10 +48,15 @@ if(isset($_POST['check']))
     $result = $stmt->get_result();
     if ($result->num_rows > 0) {
       echo "Login successful";
+      $_SESSION['logged_in'] = true;
       header("Location: ../Home/home.html");
       exit();
     } else {
-      echo "Login failed";
+      $_SESSION['logged_in'] = false;
+      header("Location: ../login_page/login.html");
+      // echo "Login failed";
+      // echo 'alert("Validation failed")';
+
     }
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
