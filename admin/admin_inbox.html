@@ -23,7 +23,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./HOD.css">
+  <link rel="stylesheet" href="./admin.css">
 
   <!-- Roboto Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -94,7 +94,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./HOD_inbox.html" class="nav-link active text-white" id="inbox-link">Inbox</a>
+          <a href="./admin_inbox.html" class="nav-link active text-white" id="inbox-link">Inbox</a>
         </li>
       </ul>   
     </div>
@@ -104,7 +104,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         <div class="modal-content" id="myModal">
             <!-- <span class="close">×</span> -->
             <h2 id="date"></h2>
-            <p >No events listed for now :(</p>
+            <p id="modal_header">No events listed for now :(</p>
             <div id="inbox"></div>
             
         </div>
@@ -115,6 +115,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
   
 </section>
-<script src="./inbox.js"></script>
+<script src="./admin_inbox.js"></script>
   </body>
 </html>  
