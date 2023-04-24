@@ -23,6 +23,7 @@ if(isset($_POST['new-event'])){
     $event_venue = implode(',', $_POST['event-venue']);
     $event_description = $_POST['event-description'];  
     $event_link = $_POST['event-link'];
+    
 
     $stmt = $conn->prepare("INSERT INTO event_data (event_name, event_start_date, event_end_date, event_start_time, event_end_time, event_mode, event_venue, event_description, event_link) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssssss", $event_name, $event_start_date, $event_end_date, $event_start_time, $event_end_time, $event_mode, $event_venue, $event_description, $event_link);

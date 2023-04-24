@@ -78,7 +78,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;">
-          <a href="./HOD.html"class="nav-link active text-white" id="calendar-link">Calendar</a>
+          <a href="./admin.html"class="nav-link  text-white" id="calendar-link">Calendar</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;">
@@ -94,51 +94,27 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./HOD_inbox.html"class="nav-link text-white" id="inbox-link">Inbox</a>
+          <a href="./HOD_inbox.html" class="nav-link active text-white" id="inbox-link">Inbox</a>
         </li>
       </ul>   
     </div>
     <div id="content" style="height: 100vh; width:90%">
-      <div class="calendar">
-        <div class="calendar-header">
-          <button class="btn-prev">Prev</button>
-          <h2 class="month-year"></h2>
-          <button class="btn-next">Next</button>
-        </div>
-        <table class="calendar-body">
-          <thead>
-            <tr>
-              <th>Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thu</th>
-              <th>Fri</th>
-              <th>Sat</th>
-            </tr>
-          </thead>
-          <tbody id="calendar-dates"></tbody>
-          
-        </table>
-        
-      </div>
+      
       <!-- <div id="myModal" class="modal"> -->
-
-        <!-- Modal content -->
         <div class="modal-content" id="myModal">
-          <span class="close">×</span>
-          <h2 id="date"></h2>
-          <p>No events listed for now :(</p>
-          <div id="event-list"></div>
-
+            <span class="close">×</span>
+            <h2 id="date"></h2>
+            <p >No events listed for now :(</p>
+            <div id="inbox"></div>
+            
         </div>
-      <!-- <div id="myModal" class="modal"> -->
     
         
   </div>
   
 
-  <script src="./HOD.js"></script>
+  
 </section>
+<script src="./inbox.js"></script>
   </body>
 </html>  

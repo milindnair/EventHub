@@ -1,6 +1,6 @@
 <?php
 // Retrieve the selected date from the query parameter
-$date = $_GET["date"];
+// $date = $_GET["date"];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,15 +14,15 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Prepare a SQL query to fetch the events for the selected date
+// Prepare a SQL query to fetch the events for the selected date with event_confirmation = 0
 $stmt = $conn->prepare("
   SELECT event_name, event_description, event_start_date, event_end_date, event_start_time, event_end_time, event_venue, event_mode, event_link
   FROM event_data
-  WHERE event_start_date = ? AND event_confirmation = 1
+  WHERE  event_confirmation = 0
 ");
 
 // Bind the $date parameter to the query
-$stmt->bind_param("s", $date);
+// $stmt->bind_param("s", $date);
 
 // Execute the query
 $stmt->execute();
