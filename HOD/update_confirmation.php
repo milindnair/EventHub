@@ -31,6 +31,7 @@ $stmt->execute();
 // Check if the query was successful
 if ($stmt->affected_rows > 0) {
   echo "Event confirmation updated";
+  
 } else {
   echo "Failed to update event confirmation";
 }
