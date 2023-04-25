@@ -17,10 +17,11 @@ if(isset($_POST['save']))
   $fullname = $_POST['regname'];
   $email = $_POST['regemail'];
   $password = $_POST['regpass'];
+  $role = $_POST['regrole'];
 
   // Prepare statement
-  $stmt = $conn->prepare("INSERT INTO userdata (name, email, password) VALUES (?, ?, ?)");
-  $stmt->bind_param("sss", $fullname, $email, $password);
+  $stmt = $conn->prepare("INSERT INTO userdata (name, email, password , Role) VALUES (?, ?, ? , ?)");
+  $stmt->bind_param("ssss", $fullname, $email, $password , $role);
 
   if ($stmt->execute()) {
     echo "New record created successfully";    
@@ -39,25 +40,32 @@ if(isset($_POST['check']))
 {
   $email = $_POST['logemail'];
   $password = $_POST['logpass'];
+  $role = $_POST['role'];
 
   // Prepare statement
-  $stmt = $conn->prepare("SELECT * FROM userdata WHERE email = ? AND password = ?");
-  $stmt->bind_param("ss", $email, $password);
+  $stmt = $conn->prepare("SELECT * FROM userdata WHERE email = ? AND password = ? AND Role = ?");
+  $stmt->bind_param("sss", $email, $password , $role);
 
   if ($stmt->execute()) {
     $result = $stmt->get_result();
     if ($result->num_rows > 0) {
-      echo "Login successful";
+      $row = $result->fetch_assoc();
       $_SESSION['logged_in'] = true;
-      header("Location: ../Home/home.html");
+      
+      if ($row['Role'] == 'admin') {
+          header("Location: ../admin/admin.html");
+      } else if ($row['Role'] == 'HOD') {
+          header("Location: ../HOD/HOD.html");
+      } else {
+          header("Location: ../user/user.html");
+      }
+      
       exit();
-    } else {
+  } else {
       $_SESSION['logged_in'] = false;
       header("Location: ../login_page/login.html");
-      // echo "Login failed";
-      // echo 'alert("Validation failed")';
-
-    }
+      exit();
+  }
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
