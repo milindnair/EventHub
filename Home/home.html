@@ -58,7 +58,7 @@
       <h2 class="club_heading">OUR CLUBS</h2>
       <a  class="pre-btn">&laquo; Previous</a>
       <a  class="nxt-btn">Next &raquo;</a>
-      <div class="club-container">
+      <div class="club-container border-bottom border-4">
         <div class="club-card">
           <div class="club-image">
             <img src="../assets/club_icons/ml-research-logo.png" class="club-thumb" alt="">
@@ -183,6 +183,112 @@
   </section>
 
   <script src="./home.js"></script>
+  <h2 class="club_heading" style="margin-top: 5vh; margin-bottom: 5vh;">FAQs</h2>
+  <div class="accordion" id="accordionExample" style="margin-bottom: 5vh;">
+    <style>
+      #accordionExample {
+        --bs-accordion-color: #fff;
+        --bs-accordion-btn-color: white;
+        --bs-accordion-active-color: black;
+        --bs-accordion-bg: transparent;
+      }
+    </style>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          How do I host an event?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>Events can only be created by clubs and their respective faculty members.</strong><br>
+          If you are inerested in hosting an event you can do so in partnership with a club or a faculty member with the
+          permisssion of the club and the HOD of the respective department.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+          aria-expanded="false" aria-controls="collapseTwo">
+          How do i view an event?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The event is visible on the user page and can be accessed by a somaiya email id only.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          How do I register for an event?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The event is visible on the user page and can be accessed by a somaiya email id only. once you login you will
+          have the option to register for the event and also give feedback after the event.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="mainfooter" role="contentinfo">
+    <div class="footer-middle" style="
+    background-color:#00b3b3;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6" style="margin:auto">
+            <div class="footer-pad">
+              <h4 style="margin-top: 10px;"> QUICK LINKS </h4>
+              <ul class="list-unstyled">
+                <li> <a href="#"> </a> </li>
+                <li> <a href="../login_page/login.html"style="color:black">Get Started</a></li>
+                <li> <a href="../Home/home.html"style="color:black"> Home </a></li>
+                <li> <a href="../about_us/about-us.html"style="color:black">About Us</a></li>
+                <li> <a href="#clubs"style="color:black">News and Updates</a></li>
+                <li> <a href="#accordionExample"style="color:black">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6" style="margin: auto;">
+            <div class="footer-pad">
+              <h4 style="margin-top: 10px;"> Important Pages </h4>
+              <ul class="list-unstyled">
+                <li> <a href="../login_page/login.html" style="color:black"> Login</a> </li>
+                <li> <a href="#"style="color:black"> KJSCE</a> </li>
+                <li> <a href="#"style="color:black">KJSCE CLUBS</a> </li>
+                <li> <a href="#"style="color:black"> events </a> </li>
+                <li> <a href="#"style="color:black"> Departments </a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h4 style="margin-top: 10px;"> Follow Us </h4>
+            <ul class="social-network social-circle">
+              <li> <a href="#" class="icoFacebook" title="Facebook"style="color:black"> Facebook<i class="fa fa-facebook"> </i> </a> </li>
+              <li> <a href="#" class="icoLinkedin" title="Linkedin"style="color:black">LinkedIn <i class="fa fa-linkedin"> </i> </a> </li>
+              <li> <a href="#"> <i class="fa fa-youtube" aria-hidden="true"style="color:black"> YouTube</i> </a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 copy">
+            <p class="text-center"> © Copyright 2021 - Company Name. All rights reserved. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
