@@ -96,60 +96,27 @@ include './admin.php';
             </ul>
         </div>
         <div id="content" style="height: 100vh;">
-            <div id="modify-event" class="section" style="align:center;height:120%">
-                <div class="section-center">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-7 col-md-push-5">
-                                <div class="booking-cta" style="color:white">
-                                    <h1>Modify your Event</h1>
-                                    <p>
-                                        Welcome back! We're happy to help you make changes to your event. Please fill out the form below with the updated information.
-                                    </p>
-                                    <h5>
-                                        Please follow the steps mentioned below on how to modify your event.
-                                    </h5>
-                                    <ul type="disc" style="color:white">
-                                        <li>
-                                            <p>Fill out the form below with the updated event details.</p>
-                                        </li>
-                                        <li>
-                                            <p>Select the total number of rooms/halls/campus area that you require for the event.</p>
-                                        </li>
-                                        <li>
-                                            <p>Then click on room layout to view the rooms and modify your room bookings.</p>
-                                        </li>
-                                        <li>
-                                            <p>After submitting the updated form, a request will be sent to the HOD for approval.</p>
-                                        </li>
-                                        <li>
-                                            <p>Once your modifications are approved, they will be reflected in the event calendar.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+            <div id="inbox">
+
+            </div>
                             <div class="col-md-4 col-md-pull-7" style="background-color:rgb(255,153,0);margin-top:3%;">
                                 <div class="booking-form" style="background-color:rgb(255, 173, 51);">
-                                    <form action="./modify_event.php" method="post">
-                                        <div class="form-group">
-                                            <span class="form-label">Event ID</span>
-                                            <input class="form-control" type="text" name="event-id" placeholder="Enter your event ID" required>
-                                        </div>
+                                    <form action="./test.php" method="post">
                                         <div class="form-group">
                                             <span class="form-label">Name of the Event</span>
-                                            <input class="form-control" type="text" name="event-name" placeholder="Enter your updated event name">
+                                            <input class="form-control" type="text" name="event-name" placeholder="Enter your updated event name"name="event-name"required>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <span class="form-label">Start Date</span>
-                                                    <input class="form-control" type="date" name="event-start-date">
+                                                    <input class="form-control" type="date" name="event-start-date"name="event-start-date">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <span class="form-label">End Date</span>
-                                                    <input class="form-control" type="date" name="event-end-date">
+                                                    <input class="form-control" type="date" name="event-end-date"name="event-end-date">
                                                 </div>
                                             </div>
                                         </div>
@@ -166,11 +133,14 @@ include './admin.php';
                                                     <input class="form-control" type="time" name="event-end-time">
                                                 </div>
                                             </div>
+                                            <div class="col-sm-6"style="margin-top:5%;margin-left:35%">
+                                                <input  class="submit-btn" name="event_modify" type="submit" ></input>  
+                                            </div>
+                                            
         
     </div>
-
     </div>
-    <script src="./admin.js"></script>
+    <script src="./modify_event.js"></script>
 </body>
 
 </html>
