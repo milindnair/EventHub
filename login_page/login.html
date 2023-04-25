@@ -49,7 +49,7 @@
 			          	<label for="reg-log"></label>
 						<div class="card-3d-wrap mx-auto">
 							<div class="card-3d-wrapper">
-								<div class="card-front">
+								<div class="card-front" style="height:120%;margin-top:-25px">
 									<div class="center-wrap">
 										<form action="./auth.php" method="post">
 										<div class="section text-center">
@@ -63,12 +63,21 @@
 													<i class="input-icon uil uil-lock-alt"></i>
 												</div>
 												<input  class="btn mt-4" name="check" type="submit" ></input>
+												<div class="form-group mt-4">
+													<p>Login as: </p>
+													<input type="radio" id="admin" name="role" value="admin">
+													<label for="admin">Admin</label><br>
+													<input type="radio" id="user" name="role" value="user">
+													<label for="user">User</label><br>
+													<input type="radio" id="HOD" name="role" value="HOD">
+													<label for="HOD">HOD</label><br>
+												</div>
 												<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
 											</div>
 										</form>
 			      					</div>
 			      				</div>
-								<div class="card-back">
+								<div class="card-back" style="height:120%;margin-top:-25px ;">
 									<div class="center-wrap">
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Sign Up</h4>
@@ -84,6 +93,15 @@
 												<div class="form-group mt-2">
 													<input type="password" name="regpass" class="form-style" placeholder="Your Password" id="regpass" autocomplete="off">
 													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+												<div class="form-group mt-4">
+													<p>Sign up as: </p>
+													<input type="radio" id="admin" name="regrole" value="admin">
+													<label for="admin">Admin</label><br>
+													<input type="radio" id="user" name="regrole" value="user">
+													<label for="user">User</label><br>
+													<input type="radio" id="HOD" name="regrole" value="HOD">
+													<label for="HOD">HOD</label><br>
 												</div>
 												<input  class="btn mt-4" name="save" type="submit" ></input>
 											</form>
