@@ -48,7 +48,9 @@ xhr.onload = function () {
       const startInput = document.createElement("input");
       const endInput = document.createElement("input");
       const venueInput = document.createElement("input");
+      const deleteRadio = document.createElement("input");
 
+      deleteRadio.setAttribute("type", "radio");
       nameInput.setAttribute("type", "text");
       nameInput.setAttribute("value", event.event_name);
       descInput.setAttribute("type", "text");
@@ -60,25 +62,56 @@ xhr.onload = function () {
       venueInput.setAttribute("type", "text");
       venueInput.setAttribute("value", event.event_venue);
 
+
       nameCell.appendChild(nameInput);
       descCell.appendChild(descInput);
       startCell.appendChild(startInput);
       endCell.appendChild(endInput);
       venueCell.appendChild(venueInput);
 
+      row.appendChild(deleteRadio);
+
       row.appendChild(nameCell);
       row.appendChild(descCell);
       row.appendChild(startCell);
       row.appendChild(endCell);
       row.appendChild(venueCell);
+      
 
       inboxTable.appendChild(row);
-    });
+
+      const deleteButton = document.getElementById("delete");
+
+        deleteButton.addEventListener("click", function () {
+            //print the selected radio button's value
+
+            const deleteRadio = document.querySelector("input[type=radio]:checked");
+            const deleteEvent = deleteRadio.parentNode.parentNode;
+            const deleteEventName = deleteEvent.querySelector("td").firstChild.value;
+            console.log(deleteEventName);
+            
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("POST", "/EventHub/admin/admin_delete_event.php?name=" + deleteEventName );
+
+            xhr.onload = function () {
+
+              if(xhr.status == 200){
+                alert("Event deleted successfully!");
+              }
+            
+
+    }});
 
     
       
-  }
+  });
+  
+}
+
+
 };
+  
 
 // Send the request
 xhr.send(); 
