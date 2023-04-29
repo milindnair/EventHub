@@ -120,6 +120,8 @@ function showCalendar(month, year) {
             const eventLink = document.createElement("a");
             const registerButton = document.createElement("button");
             const registerForm = document.getElementsByClassName("register_form")[0];
+            const btn1 = document.getElementsByClassName("close")[1];
+            const overlay = document.querySelector('.overlay');
 
             eventName.innerHTML = event.event_name;
             eventDesc.innerHTML = event.event_description;
@@ -130,8 +132,19 @@ function showCalendar(month, year) {
             registerButton.innerHTML = "Register";
 
             registerButton.addEventListener("click", () => {
+              const event_name = event.event_name;
+              const input = document.getElementById("event_name");
+              input.innerHTML = event_name;
+              input.value = event_name;
+              // console.log(input.value);
               registerForm.classList.remove("hidden");
+              overlay.classList.remove("hidden");
             });
+
+            btn1.onclick = function () {
+              registerForm.classList.add("hidden");
+              overlay.classList.add("hidden");
+            };
 
             document.addEventListener('keydown', function (e) {
               console.log(e.key);

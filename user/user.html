@@ -126,9 +126,38 @@
           <p>No events listed for now :(</p>
           <div id="event-list"></div>
           <div class="register_form hidden" >
-            <h1>This should not be displayed</h1>
+            <span class="close">×</span>
+            <div class="booking-form"style="background-color:rgb(255, 173, 51);">
+              <form action="./registered_events.php" method="post">
+                <input type="hidden" id="event_name" name="event_name" value="">
+                <div class="form-group">
+                  <span class="form-label">Enter your full Name</span>
+                  <input class="form-control" name="name" type="text" placeholder="Enter your  Name"required>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                      <span class="form-label">Enter your roll no:</span>
+                      <input class="form-control" name="roll_no" type="number" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                      <span class="form-label">Which year are you currently in:</span>
+                        <select class="form-control" name="year" >
+                        <option>--:--</option>
+                        <option>FY</option>
+                        <option>SY</option>
+                        <option>TY</option>
+                        <option>LY</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                </div>
+                <button class="form-submit" type="submit" name="user_register_event">Submit</button>                
+              </form>
+            </div>
           </div>
-          <!-- <div class="overlay hidden"></div> -->
+          <div class="overlay hidden"></div>
 
         </div>
         <!-- <div id="myModal" class="modal"> -->
