@@ -53,10 +53,14 @@ if(isset($_POST['check']))
       $_SESSION['logged_in'] = true;
       
       if ($row['Role'] == 'admin') {
-          header("Location: ../admin/admin.html");
+          $_SESSION['role'] = $row['Role'];
+          header("Location: ../admin/admin.php");
+
       } else if ($row['Role'] == 'HOD') {
+        $_SESSION['role'] = $row['Role'];
           header("Location: ../HOD/HOD.html");
       } else {
+        $_SESSION['role'] = $row['Role'];
           header("Location: ../user/user.html");
       }
       

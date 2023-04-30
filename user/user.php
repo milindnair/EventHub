@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+<?php
+// Retrieve the selected date from the query parameter
+// $date = $_GET["date"];
+session_start();
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+  // Redirect to login page
+  echo "You are not logged in";
+  header('Location: ../login_page/login.html');
+  exit();
+}
+elseif($_SESSION['role'] !== 'user'){
+  // Check if user is admin
+    // Redirect to login page
+    echo "You are not an user";
+    header('Location: ../login_page/login.html');
+    exit();
+}
+else{
+    $content = <<<HTML
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -174,3 +193,9 @@
 </body>
 
 </html>
+
+HTML;
+
+}
+
+?>
