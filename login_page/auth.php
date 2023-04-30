@@ -18,6 +18,7 @@ if(isset($_POST['save']))
   $email = $_POST['regemail'];
   $password = $_POST['regpass'];
   $role = $_POST['regrole'];
+  
 
   // Prepare statement
   $stmt = $conn->prepare("INSERT INTO userdata (name, email, password , Role) VALUES (?, ?, ? , ?)");
@@ -41,6 +42,7 @@ if(isset($_POST['check']))
   $email = $_POST['logemail'];
   $password = $_POST['logpass'];
   $role = $_POST['role'];
+  $_SESSION['email'] = $email;
 
   // Prepare statement
   $stmt = $conn->prepare("SELECT * FROM userdata WHERE email = ? AND password = ? AND Role = ?");
@@ -53,11 +55,15 @@ if(isset($_POST['check']))
       $_SESSION['logged_in'] = true;
       
       if ($row['Role'] == 'admin') {
-          header("Location: ../admin/admin.html");
+          $_SESSION['role'] = $row['Role'];
+          header("Location: ../admin/admin.php");
+
       } else if ($row['Role'] == 'HOD') {
-          header("Location: ../HOD/HOD.html");
+        $_SESSION['role'] = $row['Role'];
+          header("Location: ../HOD/HOD.php");
       } else {
-          header("Location: ../user/user.html");
+        $_SESSION['role'] = $row['Role'];
+          header("Location: ../user/user.php");
       }
       
       exit();

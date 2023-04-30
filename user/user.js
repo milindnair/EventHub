@@ -117,18 +117,52 @@ function showCalendar(month, year) {
             const eventDesc = document.createElement("p");
             const eventDateTime = document.createElement("p");
             const eventVenue = document.createElement("p");
+            const eventLink = document.createElement("a");
+            const registerButton = document.createElement("button");
+            const registerForm = document.getElementsByClassName("register_form")[0];
+            const btn1 = document.getElementsByClassName("close")[1];
+            const overlay = document.querySelector('.overlay');
 
             eventName.innerHTML = event.event_name;
             eventDesc.innerHTML = event.event_description;
             eventDateTime.innerHTML = event.event_start_date + " " + event.event_start_time + " - " + event.event_end_date + " " + event.event_end_time;
             eventVenue.innerHTML = "Venue: " + event.event_venue;
+            eventLink.innerHTML = "Event Link";
+            eventLink.href = event.event_link;
+            registerButton.innerHTML = "Register";
+
+            registerButton.addEventListener("click", () => {
+              const event_name = event.event_name;
+              const input = document.getElementById("event_name");
+              input.innerHTML = event_name;
+              input.value = event_name;
+              // console.log(input.value);
+              registerForm.classList.remove("hidden");
+              overlay.classList.remove("hidden");
+            });
+
+            btn1.onclick = function () {
+              registerForm.classList.add("hidden");
+              overlay.classList.add("hidden");
+            };
+
+            document.addEventListener('keydown', function (e) {
+              console.log(e.key);
+            
+              if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+              }
+            });
 
             listItem.appendChild(eventName);
             listItem.appendChild(eventDesc);
             listItem.appendChild(eventDateTime);
             listItem.appendChild(eventVenue);
+            listItem.appendChild(eventLink);
+            listItem.appendChild(registerButton);
 
             eventList.appendChild(listItem);
+            // console.log("hello")
           });
         }
       };
