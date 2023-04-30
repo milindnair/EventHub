@@ -74,12 +74,12 @@
           <li class="nav-item">
             <img class="sidebar-icons" src="../assets/calendar.png" alt=""
               style="height: 30px;width: 30px; margin-right: 9px">
-            <a href="./user.html" class="nav-link  text-white" id="calendar-link"> Calendar</a>
+            <a href="./user.html" class="nav-link active text-white" id="calendar-link"> Calendar</a>
           </li>
           <li class="nav-item">
             <img class="sidebar-icons" src="../assets/eventcreate.png" alt=""
               style="height: 30px;width: 30px; margin-right: 9px">
-            <a href="./registered_events.html" class="nav-link active text-white" id="create-event-link"> Registered Events</a>
+            <a href="registered_events.html" class="nav-link text-white" id="create-event-link"> Registered Events</a>
           </li>
           <li class="nav-item">
             <img class="sidebar-icons" src="../assets/modify.svg" alt=""
@@ -94,28 +94,82 @@
         </ul>
       </div>
       <div id="content" style="height: 100vh; width:90%">
+        <div class="calendar">
+          <div class="calendar-header">
+            <button class="btn-prev">Prev</button>
+            <h2 class="month-year"></h2>
+            <button class="btn-next">Next</button>
+          </div>
+          <table class="calendar-body">
+            <thead>
+              <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+            </thead>
+            <tbody id="calendar-dates"></tbody>
 
+          </table>
+
+        </div>
+        <!-- <div id="myModal" class="modal"> -->
+
+        <!-- Modal content -->
         <div class="modal-content" id="myModal">
           <span class="close">×</span>
           <h2 id="date"></h2>
-          <div id="event-filter">
-            <label for="event-select">Select Event Type:</label>
-            <select id="event-select">
-              <option value="current">Current Events</option>
-              <option value="past">Past Events</option>
-            </select>
-          </div>
+          <p>No events listed for now :(</p>
           <div id="event-list"></div>
+          <div class="register_form hidden" >
+            <span class="close">×</span>
+            <div class="booking-form"style="background-color:rgb(255, 173, 51);">
+              <form action="./registered_events.php" method="post">
+                <input type="hidden" id="event_name" name="event_name" value="">
+                <div class="form-group">
+                  <span class="form-label">Enter your full Name</span>
+                  <input class="form-control" name="name" type="text" placeholder="Enter your  Name"required>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                      <span class="form-label">Enter your roll no:</span>
+                      <input class="form-control" name="roll_no" type="number" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                      <span class="form-label">Which year are you currently in:</span>
+                        <select class="form-control" name="year" >
+                        <option>--:--</option>
+                        <option>FY</option>
+                        <option>SY</option>
+                        <option>TY</option>
+                        <option>LY</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                </div>
+                <button class="form-submit" type="submit" name="user_register_event">Submit</button>                
+              </form>
+            </div>
+          </div>
+          <div class="overlay hidden"></div>
+
         </div>
-      
+        <!-- <div id="myModal" class="modal"> -->
+
+
       </div>
-      
     </div>
 
     <!-- </div> -->
 
   </section>
-  <script src="./registered_events.js"></script>
+  <script src="./user.js"></script>
 
 </body>
 
