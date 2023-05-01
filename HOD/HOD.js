@@ -8,6 +8,12 @@ const calendarDates = calendar.querySelector("#calendar-dates");
 let date = new Date();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
+const signout = document.getElementById("sign-out");
+signout.addEventListener("click", () => {
+  console.log("sign out");
+  window.location.href = "/EventHub/admin/logout.php";
+});
+
 
 const months = [
   "January",

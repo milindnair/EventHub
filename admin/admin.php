@@ -71,7 +71,7 @@ $content = <<<HTML
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="58v23n"></button>
             <ul class="dropdown-menu" >
               <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              <li><a class="dropdown-item"  id="sign-out">Sign Out</a></li>
             </ul>
           </div>
         <div class="profile-pic">        

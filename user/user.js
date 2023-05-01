@@ -9,6 +9,7 @@ let date = new Date();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
 
+
 const months = [
   "January",
   "February",
@@ -189,6 +190,12 @@ btnNext.addEventListener("click", () => {
   currentMonth = (currentMonth + 1) % 12;
   modal.style.display = "none";
   showCalendar(currentMonth, currentYear);
+});
+
+const signout = document.getElementById("sign-out");
+signout.addEventListener("click", () => {
+  console.log("sign out");
+  window.location.href = "/EventHub/admin/logout.php";
 });
 
 showCalendar(currentMonth, currentYear);
