@@ -28,6 +28,7 @@ else{
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./user.css">
+    <link rel="stylesheet" href="./btn.css">
     <title>Main Menu</title>
 
     </head>
@@ -70,7 +71,7 @@ else{
         <div id="stars3"></div>
 
         <div style="display: flex;">
-        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:100%">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:124vh">
             <svg class="bi me-2" width="40" height="32">
             <use xlink:href="#bootstrap"></use>
             </svg>
@@ -86,7 +87,7 @@ else{
             <div class="profile-pic">
                 <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">
             </div>
-            <h3>User Name</h3>
+            <h5>{$_SESSION['email']}</h5>
             </div>
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
@@ -99,11 +100,6 @@ else{
                 <img class="sidebar-icons" src="../assets/eventcreate.png" alt=""
                 style="height: 30px;width: 30px; margin-right: 9px">
                 <a href="registered_events.html" class="nav-link text-white" id="create-event-link"> Registered Events</a>
-            </li>
-            <li class="nav-item">
-                <img class="sidebar-icons" src="../assets/modify.svg" alt=""
-                style="height: 30px;width: 30px; margin-right: 9px">
-                <a href="event_feedback.html" class="nav-link text-white" id="modify-event-link"> FeedBack</a>
             </li>
             <li class="nav-item">
                 <img class="sidebar-icons" src="../assets/delete.svg" alt=""
@@ -142,27 +138,28 @@ else{
             <div class="modal-content" id="myModal">
             <span class="close">×</span>
             <h2 id="date"></h2>
-            <p>No events listed for now :(</p>
-            <div id="event-list"></div>
+            <div id="event-list" style="padding:10px ; list-style-type: none;"></div>
             <div class="register_form hidden" >
-                <span class="close">×</span>
-                <div class="booking-form"style="background-color:rgb(255, 173, 51);">
+                <span class="close" style="position:absolute;right:17px;top:0px;font-size:40px">×</span>
+                <div class="booking-form"style="background-color:rgb(255, 173, 51);text-align:center">
                 <form action="./user_event_registration.php" method="post">
                     <input type="hidden" id="event_name" name="event_name" value="">
-                    <div class="form-group">
-                    <span class="form-label">Enter your full Name</span>
-                    <input class="form-control" name="name" type="text" placeholder="Enter your  Name"required>
+                    <div class="row">
+                        <div class="form-group">
+                        <span class="form-label">Enter your full Name</span>
+                        <input class="form-control" name="name" type="text" style="width:700px" required>
+                    </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                         <span class="form-label">Enter your roll no:</span>
-                        <input class="form-control" name="roll_no" type="number" required>
+                        <input class="form-control" name="roll_no" type="number" style="width:700px" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
                         <span class="form-label">Which year are you currently in:</span>
-                            <select class="form-control" name="year" >
+                            <select class="form-control" name="year" style="width:700px" >
                             <option>--:--</option>
                             <option>FY</option>
                             <option>SY</option>
@@ -172,7 +169,7 @@ else{
                             <span class="select-arrow"></span>
                         </div>
                     </div>
-                    <button class="form-submit" type="submit" name="user_register_event">Submit</button>                
+                    <button class="register_btn" type="submit" name="user_register_event" style="margin-top:15px">Submit</button>                
                 </form>
                 </div>
             </div>
@@ -187,8 +184,9 @@ else{
 
         <!-- </div> -->
 
-    </section>
+    
     <script src="./user.js"></script>
+    </section>
 
     </body>
 

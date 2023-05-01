@@ -31,11 +31,12 @@ cursor: pointer;
 background:rgb(255, 0, 102);
 }
 body {
-    height: 100vh;
+  height: 130vh;
     background-repeat: no-repeat;
     background-size: cover;
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
     font-family: 'Cinzel', serif;
+    /* overflow-y: hidden; */
 }
 img{
   /* padding-left:2%; */
@@ -642,10 +643,15 @@ img{
   transform: translate(-50%, -50%);
   width: 70%;
   background-color: white;
-  padding: 6rem;
+  padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
+}
+
+.row{
+  margin-left: 2px;
+  padding:5px;
 }
 
 .overlay {
@@ -740,6 +746,8 @@ img{
     padding: 1rem;
     color:#F3F5F9;
   }
+
+  
   
   .btn-prev,
   .btn-next {
@@ -807,6 +815,8 @@ img{
   .calendar-body .td{
     width:10px;
   }
+
+  
 
   
 

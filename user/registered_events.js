@@ -16,10 +16,16 @@ eventSelect.addEventListener("change", function() {
       eventList.querySelectorAll("p").forEach(function(p) {
         console.log("Adding button to:", p);
         const button = document.createElement("button");
-        button.innerHTML = "Register";
-        const registerButton = document.createElement("button");
+        button.innerHTML = "Feedback";
+        button.classList.add("register_btn");
+        button.addEventListener('mouseout', function() {
+          button.style.backgroundColor = '#ffeba7';
+        });
+        button.addEventListener('mouseover', function() {
+          button.style.backgroundColor = '#821603';
+        });
         const registerForm = document.getElementsByClassName("register_form")[0];
-        const btn1 = document.getElementsByClassName("close")[1];
+        const btn1 = document.getElementsByClassName("close")[0];
         const overlay = document.querySelector('.overlay');
 
         button.addEventListener("click", function() {
@@ -30,8 +36,11 @@ eventSelect.addEventListener("change", function() {
           registerForm.classList.add("hidden");
           overlay.classList.add("hidden");
         };
-        
+        p.appendChild(document.createElement("br"));
         p.appendChild(button);
+        p.style.border = "1px solid black";
+        p.style.padding = "10px";
+        p.style.margin = "10px";
       });
       
     }
