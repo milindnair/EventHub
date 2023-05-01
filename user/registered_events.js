@@ -17,7 +17,12 @@ eventSelect.addEventListener("change", function() {
         console.log("Adding button to:", p);
         const button = document.createElement("button");
         button.innerHTML = "Feedback";
+        let eventname = p.innerText.split(":")[0];
         button.classList.add("register_btn");
+        const eventinput = document.getElementsByClassName("event_input")[0];
+        eventinput.setAttribute("value", eventname);
+        
+        // button.setAttribute("data-event", p.innerText);
         button.addEventListener('mouseout', function() {
           button.style.backgroundColor = '#ffeba7';
         });
@@ -31,6 +36,7 @@ eventSelect.addEventListener("change", function() {
         button.addEventListener("click", function() {
           registerForm.classList.remove("hidden");
           overlay.classList.remove("hidden");
+          
         });
         btn1.onclick = function () {
           registerForm.classList.add("hidden");

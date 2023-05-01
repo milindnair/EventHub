@@ -99,9 +99,18 @@ function showCalendar(month, year) {
         if (xhr.status === 200) {
           // Parse the response JSON data
           // console.log(xhr.responseText);
+          
           const eventData = JSON.parse(xhr.responseText);
           console.log(eventData);
 
+          if(eventData.length == 0){
+            const eventList = document.getElementById("event-list");
+            eventList.innerHTML = "No events on this day";
+            eventList.style.border = "1px solid black";
+            console.log("No events on this day");
+
+          }
+          else{
           
 
          
@@ -117,20 +126,30 @@ function showCalendar(month, year) {
             const eventDesc = document.createElement("p");
             const eventDateTime = document.createElement("p");
             const eventVenue = document.createElement("p");
+            // const feedbackbtn = document.createElement("button");
 
             eventName.innerHTML = event.event_name;
             eventDesc.innerHTML = event.event_description;
             eventDateTime.innerHTML = event.event_start_date + " " + event.event_start_time + " - " + event.event_end_date + " " + event.event_end_time;
             eventVenue.innerHTML = "Venue: " + event.event_venue;
+            // feedbackbtn.innerHTML = "Feedback";
+            // feedbackbtn.setAttribute("id", "feedbackbtn");
+
+            // feedbackbtn.addEventListener("click", function () {
+
+            // });
 
             listItem.appendChild(eventName);
             listItem.appendChild(eventDesc);
             listItem.appendChild(eventDateTime);
             listItem.appendChild(eventVenue);
+            // listItem.appendChild(feedbackbtn);
 
             eventList.appendChild(listItem);
+            eventList.style.border = "1px solid black";
           });
         }
+      }
       };
 
       // Send the request

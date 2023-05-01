@@ -21,6 +21,7 @@ if (!$tableExists) {
     $sql = "CREATE TABLE feedback_event (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         email VARCHAR(50),
+        event_name VARCHAR(50) NOT NULL,
         registration VARCHAR(50),
         experience VARCHAR(50),
         volunteers VARCHAR(50),
@@ -48,9 +49,10 @@ if(isset($_POST['event_feedback'])){
     $more_event = $_POST['more-event'];
     $rate = $_POST['rate'];
     $comments = $_POST['comments'];
+    $event_name = $_POST['event_name'];
 
-    $stmt = $conn->prepare("INSERT INTO feedback_event (email ,registration, experience, volunteers, conduction, mood, future, rate, comments) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssss", $email,$registration, $experience, $volunteers, $event_type, $mood, $more_event, $rate, $comments);
+    $stmt = $conn->prepare("INSERT INTO feedback_event (email ,event_name ,registration, experience, volunteers, conduction, mood, future, rate, comments) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssss", $email,$event_name,$registration, $experience, $volunteers, $event_type, $mood, $more_event, $rate, $comments);
     
     if ($stmt->execute()) {
         echo "New record created successfully";    

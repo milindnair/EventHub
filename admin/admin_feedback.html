@@ -1,22 +1,3 @@
-<?php
-session_start();
-
-// Check if user is logged in
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-  // Redirect to login page
-  echo "You are not logged in";
-  header('Location: ../login_page/login.html');
-  exit();
-}
-elseif($_SESSION['role'] !== 'admin'){
-  // Check if user is admin
-    // Redirect to login page
-    echo "You are not an admin";
-    header('Location: ../login_page/login.html');
-    exit();
-}
-else{
-$content = <<<HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,77 +63,54 @@ $content = <<<HTML
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px; margin-right: 9px">
-          <a href="./admin.php"class="nav-link active text-white" id="calendar-link"> Calendar</a>
+          <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;">
+          <a href="./admin.php"class="nav-link  text-white" id="calendar-link">Calendar</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px; margin-right: 9px">
-          <a href="manage_event.html"class="nav-link text-white" id="create-event-link"> Create Event</a>
+          <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;">
+          <a href="./manage_event.html" class="nav-link text-white" id="create-event-link">Create Event</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a href="./admin_modify_event.html" class="nav-link text-white" id="modify-event-link"> Modify Event</a>
+          <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px;">    
+          <a href="./admin_modify_event.html" class="nav-link text-white" id="modify-event-link">Modify Event</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a href="./admin_delete.html" class="nav-link text-white" id="delete-event-link"> Delete Event</a>
+          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
+          <a href="./admin_delete.html" class="nav-link  text-white" id="delete-event-link">Delete Event</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a href="./admin_inbox.html" class="nav-link text-white" id="inbox-link"> Inbox</a>
+          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
+          <a href="./admin_inbox.html" class="nav-link  text-white" id="inbox-link">Inbox</a>
         </li>
         <li class="nav-item">
             <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-            <a href="./admin_feedback.html" class="nav-link text-white" id="inbox-link">Event Feedbacks</a>
+            <a href="./admin_feedback.html" class="nav-link active text-white" id="inbox-link">Event Feedbacks</a>
           </li>
+
       </ul>   
     </div>
     <div id="content" style="height: 100vh; width:90%">
-      <div class="calendar">
-        <div class="calendar-header">
-          <button class="btn-prev">Prev</button>
-          <h2 class="month-year"></h2>
-          <button class="btn-next">Next</button>
-        </div>
-        <table class="calendar-body">
-          <thead>
-            <tr>
-              <th>Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thu</th>
-              <th>Fri</th>
-              <th>Sat</th>
-            </tr>
-          </thead>
-          <tbody id="calendar-dates"></tbody>
-          
-        </table>
-        
-      </div>
+      
       <!-- <div id="myModal" class="modal"> -->
-
-        <!-- Modal content -->
-        <div class="modal-content" id="myModal">
-          <span class="close">×</span>
-          <h2 id="date"></h2>
-          <div id="event-list" style="padding:10px"></div>
-
+        <div class="modal-content" id="myModal" style="width: 100%;">
+            <!-- <span class="close">×</span> -->
+            <h2 id="date"></h2>
+            <p id="modal_header">No events listed for now :(</p>
+            <select id="event-dropdown">
+                <option value="">Select an event</option>
+                <option value="csi">CSI</option>
+                <option value="Event 2">Event 2</option>
+                <option value="Event 3">Event 3</option>
+            </select>
+            <div id="inbox"></div>
         </div>
-      <!-- <div id="myModal" class="modal"> -->
     
         
   </div>
-  </div>
   
 
-  <script src="./admin.js"></script>
+  
 </section>
+<script src="./admin_feedback.js"></script>
   </body>
 </html>  
-HTML;
-echo $content;
-}
-?>
-

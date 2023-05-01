@@ -38,7 +38,7 @@ if(isset($_POST['new-event'])){
             echo "Error creating table: " . $conn->error;
         }
     
-    header("Location: ../admin/admin.html");
+    header("Location: ../admin/admin.php");
     exit();
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
