@@ -31,7 +31,7 @@ if(isset($_POST['new-event'])){
     if ($stmt->execute()) {
         echo "New record created successfully";    
         $table_name = str_replace(' ', '_', $event_name); // replace spaces with underscores
-        $sql = "CREATE TABLE ".$table_name." (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(30) NOT NULL, year INT(4) NOT NULL, roll_no INT(10) NOT NULL)";
+        $sql = "CREATE TABLE ".$table_name." ( name VARCHAR(30) NOT NULL,email VARCHAR(30) NOT NULL ,  year INT(4) NOT NULL, roll_no INT(10) NOT NULL)";
         if ($conn->query($sql) === TRUE) {
             echo "Table created successfully";
         } else {

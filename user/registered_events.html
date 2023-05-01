@@ -106,6 +106,107 @@
             </select>
           </div>
           <div id="event-list"></div>
+          <div class="register_form hidden" style="position: absolute;top:150% !important" >
+            <span class="close">×</span>
+            <div class="booking-form"style="background-color:rgb(255, 173, 51);">
+              <form action="../feedback/feedback.php" method="post" name="register_form">
+                <div class="row">
+                  <div class="form-group">
+                    <span class="form-label">Were the registration process smooth and easy</span>
+                    <select class="form-control"name="registration">
+                      <option>--:--</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                      </select required>
+                      <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <span class="form-label">How was your experience about the event</span>
+                    <select class="form-control"name="experience">
+                      <option>--:--</option>
+                      <option>Poor</option>
+                      <option>Average</option>
+                      <option>Good</option>
+                      <option>Excellent</option>
+                      </select required>
+                      <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <span class="form-label">Were the volunteers/people-in charge guided you properly incase of any difficulties</span>
+                    <select class="form-control"name="volunteers">
+                      <option>--:--</option>
+                      <option>No</option>
+                      <option>Somewhat</option>
+                      <option>Yes</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                      <span class="form-label">Mode of the event</span>
+                        <select class="form-control"name="event-type">
+                        <option>--:--</option>
+                        <option>Online</option>
+                        <option>Offline</option>
+                        <option>Hybrid</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <span class="form-label">Was the event thought-provoking or refreshing</span>
+                    <select class="form-control"name="mood">
+                      <option>--:--</option>
+                      <option>No</option>
+                      <option>Yes</option>
+                      </select required>
+                      <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <span class="form-label">Do you like to see similar events from our side</span>
+                    <select class="form-control"name="more-event">
+                      <option>--:--</option>
+                      <option>Yes</option>
+                      <option>No</option>
+                      </select required>
+                      <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <span class="form-label">Rate our event on scale of 1-5</span>
+                    <select class="form-control"name="rate">
+                      <option>--:--</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      </select required>
+                      <span class="select-arrow"></span>
+                  </div>
+                </div>
+                    <div class="row">
+                      <div class="form-group">
+                        <span class="form-label">Your personal comments on how we can improve in the future</span>
+                        <input class="form-control" type="text" placeholder="Your Thoughts.....">
+                      </div>
+                      <div class="form-btn"style="padding-left:25%">
+                        <input class="submit-btn" name="event_feedback" type="submit"name="comments">
+                      </div>
+                    </div>      
+              </form>
+            </div>
+        </div>
+        <div class="overlay hidden"></div>
         </div>
       
       </div>
