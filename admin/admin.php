@@ -77,7 +77,7 @@ $content = <<<HTML
         <div class="profile-pic">        
           <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">        
         </div>
-        <h3>Admin Name</h3>
+        <h5>{$_SESSION['email']}</h5>
       </div>    
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
