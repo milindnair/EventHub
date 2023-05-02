@@ -64,7 +64,7 @@ else{
           </nav>
   
   <div style="display: flex;">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:100%">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:124vh">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
         <div class="sidebar-top-container">
           <div class="dropdown">
@@ -77,25 +77,13 @@ else{
         <div class="profile-pic">        
           <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">        
         </div>
-        <h3>Admin Name</h3>
+        <h5>{$_SESSION['email']}</h5>
       </div>    
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;">
           <a href="/HOD/HOD.html"class="nav-link active text-white" id="calendar-link">Calendar</a>
-        </li>
-        <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;">
-          <a href="manage_event.html"class="nav-link text-white" id="create-event-link">Create Event</a>
-        </li>
-        <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px;">    
-          <a class="nav-link text-white" id="modify-event-link">Modify Event</a>
-        </li>
-        <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a class="nav-link text-white" id="delete-event-link">Delete Event</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
