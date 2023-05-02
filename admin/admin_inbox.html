@@ -106,12 +106,19 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
       
       <!-- <div id="myModal" class="modal"> -->
         <div class="modal-content" id="myModal">
-            <!-- <span class="close">×</span> -->
-            <h2 id="date"></h2>
-            <p id="modal_header">No events listed for now :(</p>
-            <div id="inbox"></div>
+          <!-- <span class="close">×</span> -->
+          <h2 id="date"></h2>
+          <div id="event-filter">
+            <label for="event-select">Select Event Type:</label>
+            <select id="event-select">
+              
+            </select>
+          </div>
+          <div id="event-list" style="margin-top: 20px;width: 100%;"></div>
             
         </div>
+        </div>
+        
     
         
   </div>

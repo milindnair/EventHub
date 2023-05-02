@@ -94,7 +94,7 @@ else{
             <li class="nav-item">
                 <img class="sidebar-icons" src="../assets/calendar.png" alt=""
                 style="height: 30px;width: 30px; margin-right: 9px">
-                <a href="./user.html" class="nav-link active text-white" id="calendar-link"> Calendar</a>
+                <a href="./user.php" class="nav-link active text-white" id="calendar-link"> Calendar</a>
             </li>
             <li class="nav-item">
                 <img class="sidebar-icons" src="../assets/eventcreate.png" alt=""

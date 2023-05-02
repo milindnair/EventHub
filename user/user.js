@@ -107,7 +107,7 @@ function showCalendar(month, year) {
             const eventDesc = document.createElement("p");
             const eventDateTime = document.createElement("p");
             const eventVenue = document.createElement("p");
-            const eventLink = document.createElement("a");
+            const eventLink = document.createElement("img");
             const registerButton = document.createElement("button");
             const registerForm = document.getElementsByClassName("register_form")[0];
             const btn1 = document.getElementsByClassName("close")[1];
@@ -117,8 +117,8 @@ function showCalendar(month, year) {
             eventDesc.innerHTML = "<b>Description: </b> " + event.event_description;
             eventDateTime.innerHTML = "<b>Events starts at: </b>"+event.event_start_date + " "+ event.event_start_time + " - " +" and ends at: " + event.event_end_date + " " + event.event_end_time;
             eventVenue.innerHTML = "<b>Venue: </b>" + event.event_venue;
-            eventLink.innerHTML = "Link to the posture for more information";
-            eventLink.href = event.event_link;
+            
+            eventLink.src = event.event_link;
             registerButton.innerHTML = "Register Now";
             registerButton.classList.add("register_btn");
 
