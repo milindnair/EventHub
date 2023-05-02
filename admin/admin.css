@@ -31,7 +31,7 @@ cursor: pointer;
 background:rgb(255, 0, 102);
 }
 body {
-    height: 100vh;
+    height: 124vh;
     background-repeat: no-repeat;
     background-size: cover;
     background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);

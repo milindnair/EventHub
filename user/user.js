@@ -9,6 +9,7 @@ let date = new Date();
 let currentMonth = date.getMonth();
 let currentYear = date.getFullYear();
 
+
 const months = [
   "January",
   "February",
@@ -25,6 +26,9 @@ const months = [
 ];
 
 
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementsByClassName("close")[0];
 
 function showCalendar(month, year) {
   let firstDay = new Date(year, month).getDay();
@@ -44,25 +48,10 @@ function showCalendar(month, year) {
   calendarDates.innerHTML = tbl;
   monthYear.innerHTML = months[month] + " " + year;
 
-  var selectedCells = document.querySelectorAll("td");
-  var modal = document.getElementById("myModal");
-  var btn = document.getElementsByClassName("close")[0];
-
+ 
   var previousCell = null;
-
-  btnPrev.addEventListener("click", () => {
-    currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
-    currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-    modal.style.display = "none";
-    showCalendar(currentMonth, currentYear);
-  });
-
-  btnNext.addEventListener("click", () => {
-    currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
-    currentMonth = (currentMonth + 1) % 12;
-    modal.style.display = "none";
-    showCalendar(currentMonth, currentYear);
-  });
+  var selectedCells = document.querySelectorAll("td");
+ 
 
   selectedCells.forEach(function (cell) {
     cell.style.width = "40px";
@@ -97,6 +86,7 @@ function showCalendar(month, year) {
       // Set up the onload callback
       xhr.onload = function () {
         if (xhr.status === 200) {
+          if(xhr.responseText.length > 0){
           // Parse the response JSON data
           // console.log(xhr.responseText);
           const eventData = JSON.parse(xhr.responseText);
@@ -123,13 +113,14 @@ function showCalendar(month, year) {
             const btn1 = document.getElementsByClassName("close")[1];
             const overlay = document.querySelector('.overlay');
 
-            eventName.innerHTML = event.event_name;
-            eventDesc.innerHTML = event.event_description;
-            eventDateTime.innerHTML = event.event_start_date + " " + event.event_start_time + " - " + event.event_end_date + " " + event.event_end_time;
-            eventVenue.innerHTML = "Venue: " + event.event_venue;
-            eventLink.innerHTML = "Event Link";
+            eventName.innerHTML = "Name: " + event.event_name;
+            eventDesc.innerHTML = "<b>Description: </b> " + event.event_description;
+            eventDateTime.innerHTML = "<b>Events starts at: </b>"+event.event_start_date + " "+ event.event_start_time + " - " +" and ends at: " + event.event_end_date + " " + event.event_end_time;
+            eventVenue.innerHTML = "<b>Venue: </b>" + event.event_venue;
+            eventLink.innerHTML = "Link to the posture for more information";
             eventLink.href = event.event_link;
-            registerButton.innerHTML = "Register";
+            registerButton.innerHTML = "Register Now";
+            registerButton.classList.add("register_btn");
 
             registerButton.addEventListener("click", () => {
               const event_name = event.event_name;
@@ -159,12 +150,23 @@ function showCalendar(month, year) {
             listItem.appendChild(eventDateTime);
             listItem.appendChild(eventVenue);
             listItem.appendChild(eventLink);
+            listItem.appendChild(document.createElement("br"));
             listItem.appendChild(registerButton);
 
             eventList.appendChild(listItem);
+            eventList.style.border = "1px solid black";
             // console.log("hello")
           });
         }
+        else{
+          const eventList = document.getElementById("event-list");
+          eventList.innerHTML = "";
+          const listItem = document.createElement("li");
+          listItem.innerHTML = "No events on this date";
+          eventList.appendChild(listItem);
+          eventList.style.border = "1px solid black";
+        }
+      }
       };
 
       // Send the request
@@ -175,5 +177,25 @@ function showCalendar(month, year) {
   });
 
 }
+
+ btnPrev.addEventListener("click", () => {
+  currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
+  currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+  modal.style.display = "none";
+  showCalendar(currentMonth, currentYear);
+});
+
+btnNext.addEventListener("click", () => {
+  currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
+  currentMonth = (currentMonth + 1) % 12;
+  modal.style.display = "none";
+  showCalendar(currentMonth, currentYear);
+});
+
+const signout = document.getElementById("sign-out");
+signout.addEventListener("click", () => {
+  console.log("sign out");
+  window.location.href = "/EventHub/admin/logout.php";
+});
 
 showCalendar(currentMonth, currentYear);

@@ -24,6 +24,11 @@ const months = [
   "December",
 ];
 
+const signout = document.getElementById("sign-out");
+signout.addEventListener("click", () => {
+  console.log("sign out");
+  window.location.href = "/EventHub/admin/logout.php";
+});
 
 
 function showCalendar(month, year) {
@@ -66,8 +71,7 @@ function showCalendar(month, year) {
 
   selectedCells.forEach(function (cell) {
     cell.style.width = "40px";
-  }
-  );
+  });
   btn.onclick = function () {
     modal.style.display = "none";
     selectedCells.forEach(
@@ -85,61 +89,83 @@ function showCalendar(month, year) {
       cell.style.backgroundColor = "black";
       previousCell = cell;
       modal.style.display = "block";
-      document.getElementById("date").innerHTML = cell.innerHTML + " " + months[month] + " " + year;
+      document.getElementById("date").innerHTML =
+        cell.innerHTML + " " + months[month] + " " + year;
       const selectedDate = year + "-" + (month + 1) + "-" + cell.innerHTML;
 
       // Create a new XMLHttpRequest object
       const xhr = new XMLHttpRequest();
 
       // Set up the request
-      xhr.open("GET", "/EventHub/event_form/get_event.php?date=" + selectedDate);
+      xhr.open(
+        "GET",
+        "/EventHub/event_form/get_event.php?date=" + selectedDate
+      );
 
       // Set up the onload callback
       xhr.onload = function () {
         if (xhr.status === 200) {
           // Parse the response JSON data
           // console.log(xhr.responseText);
+
           const eventData = JSON.parse(xhr.responseText);
           console.log(eventData);
 
-          
+          if (eventData.length == 0) {
+            const eventList = document.getElementById("event-list");
+            eventList.innerHTML = "No events on this day";
+            eventList.style.border = "1px solid black";
+            console.log("No events on this day");
+          } else {
+            const eventList = document.getElementById("event-list");
 
-         
-          const eventList = document.getElementById("event-list");
+            // Clear any previously displayed events
+            eventList.innerHTML = "";
 
-          // Clear any previously displayed events
-          eventList.innerHTML = "";
+            // Create a new list item for each event and add it to the list
+            eventData.forEach(function (event) {
+              const listItem = document.createElement("li");
+              const eventName = document.createElement("h3");
+              const eventDesc = document.createElement("p");
+              const eventDateTime = document.createElement("p");
+              const eventVenue = document.createElement("p");
+              // const feedbackbtn = document.createElement("button");
 
-          // Create a new list item for each event and add it to the list
-          eventData.forEach(function (event) {
-            const listItem = document.createElement("li");
-            const eventName = document.createElement("h3");
-            const eventDesc = document.createElement("p");
-            const eventDateTime = document.createElement("p");
-            const eventVenue = document.createElement("p");
+              eventName.innerHTML = event.event_name;
+              eventDesc.innerHTML = event.event_description;
+              eventDateTime.innerHTML =
+                event.event_start_date +
+                " " +
+                event.event_start_time +
+                " - " +
+                event.event_end_date +
+                " " +
+                event.event_end_time;
+              eventVenue.innerHTML = "Venue: " + event.event_venue;
+              // feedbackbtn.innerHTML = "Feedback";
+              // feedbackbtn.setAttribute("id", "feedbackbtn");
 
-            eventName.innerHTML = event.event_name;
-            eventDesc.innerHTML = event.event_description;
-            eventDateTime.innerHTML = event.event_start_date + " " + event.event_start_time + " - " + event.event_end_date + " " + event.event_end_time;
-            eventVenue.innerHTML = "Venue: " + event.event_venue;
+              // feedbackbtn.addEventListener("click", function () {
 
-            listItem.appendChild(eventName);
-            listItem.appendChild(eventDesc);
-            listItem.appendChild(eventDateTime);
-            listItem.appendChild(eventVenue);
+              // });
 
-            eventList.appendChild(listItem);
-          });
+              listItem.appendChild(eventName);
+              listItem.appendChild(eventDesc);
+              listItem.appendChild(eventDateTime);
+              listItem.appendChild(eventVenue);
+              // listItem.appendChild(feedbackbtn);
+
+              eventList.appendChild(listItem);
+              eventList.style.border = "1px solid black";
+            });
+          }
         }
       };
 
       // Send the request
       xhr.send();
     });
-
-
   });
-
 }
 
 showCalendar(currentMonth, currentYear);

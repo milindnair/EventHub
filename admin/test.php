@@ -25,7 +25,7 @@ if (!$conn) {
 
     if (mysqli_query($conn, $sql)) {
         echo "Event updated successfully";
-        header("Location: ./admin.html");
+        header("Location: ../admin/admin.php");
     } else {
         echo "Error updating event: " . mysqli_error($conn);
     }

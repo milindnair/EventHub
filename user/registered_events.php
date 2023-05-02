@@ -39,7 +39,7 @@ while ($row = $result->fetch_assoc()) {
       echo "<p>$event_name: $email</p>";
     }
     else{
-        echo "<p>$event_name: Not Registered for any events</p>"; 
+        echo "<p>$event_name: Not Registered for any events</p>";
     }
   }
 

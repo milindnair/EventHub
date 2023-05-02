@@ -1,17 +1,3 @@
-<?php
-session_start();
-
-// Check if user is logged in
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-  // Redirect to login page
-  echo "You are not logged in";
-  header('Location: ../login_page/login.html');
-  exit();
-}
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +9,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./HOD.css">
+  <link rel="stylesheet" href="./admin.css">
 
   <!-- Roboto Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -78,67 +64,53 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;">
-          <a href="/HOD/HOD.html"class="nav-link active text-white" id="calendar-link">Calendar</a>
+          <a href="./admin.php"class="nav-link  text-white" id="calendar-link">Calendar</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;">
-          <a href="manage_event.html"class="nav-link text-white" id="create-event-link">Create Event</a>
+          <a href="./manage_event.html" class="nav-link text-white" id="create-event-link">Create Event</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px;">    
-          <a class="nav-link text-white" id="modify-event-link">Modify Event</a>
+          <a href="./admin_modify_event.html" class="nav-link text-white" id="modify-event-link">Modify Event</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a class="nav-link text-white" id="delete-event-link">Delete Event</a>
+          <a href="./admin_delete.html" class="nav-link  text-white" id="delete-event-link">Delete Event</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./HOD_inbox.html"class="nav-link text-white" id="inbox-link">Inbox</a>
+          <a href="./admin_inbox.html" class="nav-link  text-white" id="inbox-link">Inbox</a>
         </li>
+        <li class="nav-item">
+            <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
+            <a href="./admin_feedback.html" class="nav-link active text-white" id="inbox-link">Event Feedbacks</a>
+          </li>
+
       </ul>   
     </div>
     <div id="content" style="height: 100vh; width:90%">
-      <div class="calendar">
-        <div class="calendar-header">
-          <button class="btn-prev">Prev</button>
-          <h2 class="month-year"></h2>
-          <button class="btn-next">Next</button>
-        </div>
-        <table class="calendar-body">
-          <thead>
-            <tr>
-              <th>Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thu</th>
-              <th>Fri</th>
-              <th>Sat</th>
-            </tr>
-          </thead>
-          <tbody id="calendar-dates"></tbody>
-          
-        </table>
-        
-      </div>
+      
       <!-- <div id="myModal" class="modal"> -->
-
-        <!-- Modal content -->
-        <div class="modal-content" id="myModal">
-          <span class="close">×</span>
-          <h2 id="date"></h2>
-          <p>No events listed for now :(</p>
-          <div id="event-list"></div>
-
+        <div class="modal-content" id="myModal" style="width: 100%;">
+            <!-- <span class="close">×</span> -->
+            <h2 id="date"></h2>
+            <p id="modal_header">No events listed for now :(</p>
+            <select id="event-dropdown">
+                <option value="">Select an event</option>
+                <option value="csi">CSI</option>
+                <option value="Event 2">Event 2</option>
+                <option value="Event 3">Event 3</option>
+            </select>
+            <div id="inbox"></div>
         </div>
-      <!-- <div id="myModal" class="modal"> -->
     
         
   </div>
   
 
-  <script src="./HOD.js"></script>
+  
 </section>
+<script src="./admin_feedback.js"></script>
   </body>
 </html>  

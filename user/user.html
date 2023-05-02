@@ -51,7 +51,7 @@
     <div id="stars3"></div>
 
     <div style="display: flex;">
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:100%">
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:124vh">
         <svg class="bi me-2" width="40" height="32">
           <use xlink:href="#bootstrap"></use>
         </svg>
@@ -61,7 +61,7 @@
               aria-expanded="false" fdprocessedid="58v23n"></button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              <li><a class="dropdown-item" id="sign-out">Sign Out</a></li>
             </ul>
           </div>
           <div class="profile-pic">
@@ -80,11 +80,6 @@
             <img class="sidebar-icons" src="../assets/eventcreate.png" alt=""
               style="height: 30px;width: 30px; margin-right: 9px">
             <a href="registered_events.html" class="nav-link text-white" id="create-event-link"> Registered Events</a>
-          </li>
-          <li class="nav-item">
-            <img class="sidebar-icons" src="../assets/modify.svg" alt=""
-              style="height: 30px;width: 30px; margin-right: 9px">
-            <a href="event_feedback.html" class="nav-link text-white" id="modify-event-link"> FeedBack</a>
           </li>
           <li class="nav-item">
             <img class="sidebar-icons" src="../assets/delete.svg" alt=""
@@ -123,8 +118,7 @@
         <div class="modal-content" id="myModal">
           <span class="close">×</span>
           <h2 id="date"></h2>
-          <p>No events listed for now :(</p>
-          <div id="event-list"></div>
+          <div id="event-list" ></div>
           <div class="register_form hidden" >
             <span class="close">×</span>
             <div class="booking-form"style="background-color:rgb(255, 173, 51);">

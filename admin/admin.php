@@ -71,7 +71,7 @@ $content = <<<HTML
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="58v23n"></button>
             <ul class="dropdown-menu" >
               <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              <li><a class="dropdown-item"  id="sign-out">Sign Out</a></li>
             </ul>
           </div>
         <div class="profile-pic">        
@@ -83,7 +83,7 @@ $content = <<<HTML
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px; margin-right: 9px">
-          <a href="./admin.html"class="nav-link active text-white" id="calendar-link"> Calendar</a>
+          <a href="./admin.php"class="nav-link active text-white" id="calendar-link"> Calendar</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px; margin-right: 9px">
@@ -91,16 +91,20 @@ $content = <<<HTML
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a class="nav-link text-white" id="modify-event-link"> Modify Event</a>
+          <a href="./admin_modify_event.html" class="nav-link text-white" id="modify-event-link"> Modify Event</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a class="nav-link text-white" id="delete-event-link"> Delete Event</a>
+          <a href="./admin_delete.html" class="nav-link text-white" id="delete-event-link"> Delete Event</a>
         </li>
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a class="nav-link text-white" id="inbox-link"> Inbox</a>
+          <a href="./admin_inbox.html" class="nav-link text-white" id="inbox-link"> Inbox</a>
         </li>
+        <li class="nav-item">
+            <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
+            <a href="./admin_feedback.html" class="nav-link text-white" id="inbox-link">Event Feedbacks</a>
+          </li>
       </ul>   
     </div>
     <div id="content" style="height: 100vh; width:90%">
@@ -133,8 +137,7 @@ $content = <<<HTML
         <div class="modal-content" id="myModal">
           <span class="close">×</span>
           <h2 id="date"></h2>
-          <p>No events listed for now :(</p>
-          <div id="event-list"></div>
+          <div id="event-list" style="padding:10px"></div>
 
         </div>
       <!-- <div id="myModal" class="modal"> -->

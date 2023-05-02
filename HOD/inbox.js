@@ -1,12 +1,13 @@
 const xhr = new XMLHttpRequest();
 
 // Set up the request
-xhr.open("GET", "/EventHub/HOD/HOD.php");
-
+xhr.open("GET", "/EventHub/HOD/get_unregistered_events.php");
+console.log("Hello");
 // Set up the onload callback
 xhr.onload = function () {
   if (xhr.status === 200) {
     // Parse the response JSON data
+    console.log(xhr.responseText);
     const eventData = JSON.parse(xhr.responseText);
 
     // Get the inbox list element
