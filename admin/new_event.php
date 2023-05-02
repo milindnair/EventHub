@@ -34,6 +34,7 @@ if(isset($_POST['new-event'])){
         $sql = "CREATE TABLE ".$table_name." ( name VARCHAR(30) NOT NULL,email VARCHAR(30) NOT NULL ,  year INT(4) NOT NULL, roll_no INT(10) NOT NULL)";
         if ($conn->query($sql) === TRUE) {
             echo "Table created successfully";
+            header("Location: ../admin/admin.php");
         } else {
             echo "Error creating table: " . $conn->error;
         }

@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+<?php
+// Retrieve the selected date from the query parameter
+// $date = $_GET["date"];
+session_start();
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+  // Redirect to login page
+  echo "You are not logged in";
+  header('Location: ../login_page/login.html');
+  exit();
+}
+elseif($_SESSION['role'] !== 'user'){
+  // Check if user is admin
+    // Redirect to login page
+    echo "You are not an user";
+    header('Location: ../login_page/login.html');
+    exit();
+}
+else{
+    $content = <<<HTML
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +29,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="./user.css">
   <link rel="stylesheet" href="./btn.css">
-  <title>Main Menu</title>
+  <title>Registered Events</title>
 
 </head>
 
@@ -62,31 +81,25 @@
               aria-expanded="false" fdprocessedid="58v23n"></button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              <li><a class="dropdown-item" href="../login_page/login.html">Sign Out</a></li>
             </ul>
           </div>
           <div class="profile-pic">
             <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">
           </div>
-          <h3>User Name</h3>
+          <h5>{$_SESSION['email']}</h5>
         </div>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
             <img class="sidebar-icons" src="../assets/calendar.png" alt=""
               style="height: 30px;width: 30px; margin-right: 9px">
-            <a href="./user.php" class="nav-link  text-white" id="calendar-link"> Calendar</a>
+            <a href="./user_1.php" class="nav-link  text-white" id="calendar-link"> Calendar</a>
           </li>
           <li class="nav-item">
             <img class="sidebar-icons" src="../assets/eventcreate.png" alt=""
               style="height: 30px;width: 30px; margin-right: 9px">
-            <a href="./registered_events.html" class="nav-link active text-white" id="create-event-link"> Registered Events</a>
-          </li>
-          
-          <li class="nav-item">
-            <img class="sidebar-icons" src="../assets/delete.svg" alt=""
-              style="height: 30px;width: 30px; margin-right: 9px">
-            <a href="user_inbox.html" class="nav-link text-white" id="inbox-link"> Inbox</a>
+            <a href="./user_2.php" class="nav-link active text-white" id="create-event-link"> Registered Events</a>
           </li>
         </ul>
       </div>
@@ -219,3 +232,6 @@
 </body>
 
 </html>
+HTML;
+echo $content;
+}

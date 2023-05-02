@@ -32,7 +32,7 @@ else{
 
   <!-- Roboto Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <title>Admin Page</title>
+  <title>HOD</title>
     
 </head>
 
@@ -71,7 +71,7 @@ else{
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="58v23n"></button>
             <ul class="dropdown-menu" >
               <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" id="sign-out">Sign Out</a></li>
+              <li><a class="dropdown-item" id="sign-out" href="../login_page/login.html">Sign Out</a></li>
             </ul>
           </div>
         <div class="profile-pic">        
@@ -86,8 +86,8 @@ else{
           <a href="/HOD/HOD.html"class="nav-link active text-white" id="calendar-link">Calendar</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./HOD_inbox.html"class="nav-link text-white" id="inbox-link">Inbox</a>
+          <img class="sidebar-icons" src="../assets/notify.png" alt="" style="height: 30px;width: 30px;">    
+          <a href="./HOD_inbox.php"class="nav-link text-white" id="inbox-link">Inbox</a>
         </li>
       </ul>   
     </div>

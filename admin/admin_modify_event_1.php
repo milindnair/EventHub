@@ -1,6 +1,22 @@
-<?php 
-include './admin.php';
-?>
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+  // Redirect to login page
+  echo "You are not logged in";
+  header('Location: ../login_page/login.html');
+  exit();
+}
+elseif($_SESSION['role'] !== 'admin'){
+  // Check if user is admin
+    // Redirect to login page
+    echo "You are not an admin";
+    header('Location: ../login_page/login.html');
+    exit();
+}
+else{
+$content = <<<HTML
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +34,7 @@ include './admin.php';
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <title>Admin Page</title>
+    <title>Modify Event</title>
     <link rel="stylesheet" href="../admin/admin.css">
 </head>
 
@@ -62,13 +78,13 @@ include './admin.php';
                         aria-expanded="false" fdprocessedid="58v23n"></button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                        <li><a class="dropdown-item" href="../login_page/login.html">Sign Out</a></li>
                     </ul>
                 </div>
                 <div class="profile-pic">
                     <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">
                 </div>
-                <h3>Admin Name</h3>
+                <h5>{$_SESSION['email']}</h5>
             </div>
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
@@ -78,24 +94,24 @@ include './admin.php';
                 </li>
                 <li class="nav-item">
                     <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;">
-                    <a href="manage_event.html" class="nav-link  text-white" id="create-event-link">Create
+                    <a href="manage_event_1.php" class="nav-link  text-white" id="create-event-link">Create
                         Event</a>
                 </li>
                 <li class="nav-item">
                     <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px;">
-                    <a href="./admin_modify_event.html" class="nav-link active text-white" id="modify-event-link">Modify Event</a>
+                    <a href="./admin_modify_event_1.php" class="nav-link active text-white" id="modify-event-link">Modify Event</a>
                 </li>
                 <li class="nav-item">
                     <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">
-                    <a href="./admin_delete.html" class="nav-link text-white" id="delete-event-link">Delete Event</a>
+                    <a href="./admin_delete_1.php" class="nav-link text-white" id="delete-event-link">Delete Event</a>
                 </li>
                 <li class="nav-item">
-                    <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">
-                    <a href="./admin_inbox.html" class="nav-link text-white" id="inbox-link">Inbox</a>
+                    <img class="sidebar-icons" src="../assets/notify.png" alt="" style="height: 30px;width: 30px;">
+                    <a href="./admin_inbox_1.php" class="nav-link text-white" id="inbox-link">Inbox</a>
                 </li>
                 <li class="nav-item">
-                    <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-                    <a href="./admin_feedback.html" class="nav-link  text-white" id="inbox-link">Event Feedbacks</a>
+                    <img class="sidebar-icons" src="../assets/notify.png" alt="" style="height: 30px;width: 30px;">    
+                    <a href="./admin_feedback_1.php" class="nav-link  text-white" id="inbox-link">Event Feedbacks</a>
                   </li>
             </ul>
         </div>
@@ -149,3 +165,7 @@ include './admin.php';
 </body>
 
 </html>
+HTML;
+echo $content;
+}
+?>

@@ -1,18 +1,23 @@
 <?php
+// Retrieve the selected date from the query parameter
+// $date = $_GET["date"];
 session_start();
-
-// Check if user is logged in
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
   // Redirect to login page
   echo "You are not logged in";
   header('Location: ../login_page/login.html');
   exit();
 }
-
-
-
-?>
-<!DOCTYPE html>
+elseif($_SESSION['role'] !== 'HOD'){
+  // Check if user is admin
+    // Redirect to login page
+    echo "You are not an admin";
+    header('Location: ../login_page/login.html');
+    exit();
+}
+else{
+  $content = <<<HTML
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   
@@ -23,11 +28,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./admin.css">
+  <link rel="stylesheet" href="./HOD.css">
 
   <!-- Roboto Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <title>Admin Page</title>
+  <title>Inbox</title>
     
 </head>
 
@@ -59,46 +64,30 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
           </nav>
   
   <div style="display: flex;">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:130%">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height:124vh">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
         <div class="sidebar-top-container">
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="58v23n"></button>
             <ul class="dropdown-menu" >
               <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              <li><a class="dropdown-item" href="../login_page/login.html">Sign Out</a></li>
             </ul>
           </div>
         <div class="profile-pic">        
           <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">        
         </div>
-        <h3>Admin Name</h3>
+        <h5>{$_SESSION['email']}</h5>
       </div>    
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
           <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;">
-          <a href="./admin.php"class="nav-link  text-white" id="calendar-link">Calendar</a>
+          <a href="./HOD.php"class="nav-link  text-white" id="calendar-link">Calendar</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;">
-          <a href="./manage_event.html" class="nav-link text-white" id="create-event-link">Create Event</a>
-        </li>
-        <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./admin_modify_event.html" class="nav-link text-white" id="modify-event-link">Modify Event</a>
-        </li>
-        <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./admin_delete.html" class="nav-link active text-white" id="delete-event-link">Delete Event</a>
-        </li>
-        <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./admin_inbox.html" class="nav-link  text-white" id="inbox-link">Inbox</a>
-        </li>
-        <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./admin_feedback.html" class="nav-link text-white" id="inbox-link">Event Feedbacks</a>
+          <img class="sidebar-icons" src="../assets/notify.png" alt="" style="height: 30px;width: 30px;">    
+          <a href="./HOD_inbox.php" class="nav-link active text-white" id="inbox-link">Inbox</a>
         </li>
       </ul>   
     </div>
@@ -108,9 +97,9 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         <div class="modal-content" id="myModal">
             <!-- <span class="close">×</span> -->
             <h2 id="date"></h2>
-            <p id="modal_header">No events listed for now :(</p>
+            <p >No events listed for now :(</p>
             <div id="inbox"></div>
-            <input type="button" name="delete" id="delete" value="Delete" class="btn btn-danger">
+            
         </div>
     
         
@@ -119,6 +108,12 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 
   
 </section>
-<script src="./admin_delete.js"></script>
+<script src="./inbox.js"></script>
   </body>
 </html>  
+HTML;
+echo $content;
+ 
+}
+
+?>

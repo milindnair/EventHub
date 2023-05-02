@@ -81,7 +81,7 @@ else{
                 aria-expanded="false" fdprocessedid="58v23n"></button>
                 <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                <li><a class="dropdown-item" href="../login_page/login.html">Sign Out</a></li>
                 </ul>
             </div>
             <div class="profile-pic">
@@ -94,17 +94,12 @@ else{
             <li class="nav-item">
                 <img class="sidebar-icons" src="../assets/calendar.png" alt=""
                 style="height: 30px;width: 30px; margin-right: 9px">
-                <a href="./user.html" class="nav-link active text-white" id="calendar-link"> Calendar</a>
+                <a href="./user_1.php" class="nav-link active text-white" id="calendar-link"> Calendar</a>
             </li>
             <li class="nav-item">
                 <img class="sidebar-icons" src="../assets/eventcreate.png" alt=""
                 style="height: 30px;width: 30px; margin-right: 9px">
-                <a href="registered_events.html" class="nav-link text-white" id="create-event-link"> Registered Events</a>
-            </li>
-            <li class="nav-item">
-                <img class="sidebar-icons" src="../assets/delete.svg" alt=""
-                style="height: 30px;width: 30px; margin-right: 9px">
-                <a href="user_inbox.html" class="nav-link text-white" id="inbox-link"> Inbox</a>
+                <a href="./user_2.php" class="nav-link text-white" id="create-event-link"> Registered Events</a>
             </li>
             </ul>
         </div>
