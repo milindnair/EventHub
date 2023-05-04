@@ -81,30 +81,30 @@ $content = <<<HTML
       </div>    
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px; margin-right: 9px">
-          <a href="./admin.php"class="nav-link active text-white" id="calendar-link"> Calendar</a>
+      <li class="nav-item">
+          <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;">
+          <a href="./admin.php"class="nav-link  text-white" id="calendar-link">Calendar</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px; margin-right: 9px">
-          <a href="manage_event.html"class="nav-link text-white" id="create-event-link"> Create Event</a>
+          <img class="sidebar-icons" src="../assets/eventcreate.png" alt="" style="height: 30px;width: 30px;">
+          <a href="./manage_event.html" class="nav-link text-white" id="create-event-link">Create Event</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a href="./admin_modify_event.html" class="nav-link text-white" id="modify-event-link"> Modify Event</a>
+          <img class="sidebar-icons" src="../assets/modify.svg" alt="" style="height: 30px;width: 30px;">    
+          <a href="./admin_modify_event.html" class="nav-link text-white" id="modify-event-link">Modify Event</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a href="./admin_delete.html" class="nav-link text-white" id="delete-event-link"> Delete Event</a>
+          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
+          <a href="./admin_delete.html" class="nav-link active text-white" id="delete-event-link">Delete Event</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px; margin-right: 9px">    
-          <a href="./admin_inbox.html" class="nav-link text-white" id="inbox-link"> Inbox</a>
+          <img class="sidebar-icons" src="../assets/notify.png" alt="" style="height: 30px;width: 30px;">    
+          <a href="./admin_inbox.html" class="nav-link  text-white" id="inbox-link">Inbox</a>
         </li>
         <li class="nav-item">
-            <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-            <a href="./admin_feedback.html" class="nav-link text-white" id="inbox-link">Event Feedbacks</a>
-          </li>
+          <img class="sidebar-icons" src="../assets/notify.png" alt="" style="height: 30px;width: 30px;">    
+          <a href="./admin_feedback.html" class="nav-link text-white" id="inbox-link">Event Feedbacks</a>
+        </li>
       </ul>   
     </div>
     <div id="content" style="height: 100vh; width:90%">

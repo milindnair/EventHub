@@ -81,13 +81,13 @@ else{
       </div>    
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
+      <li class="nav-item">
           <img class="sidebar-icons" src="../assets/calendar.png" alt="" style="height: 30px;width: 30px;">
-          <a href="/HOD/HOD.html"class="nav-link active text-white" id="calendar-link">Calendar</a>
+          <a href="./HOD.php"class="nav-link  text-white" id="calendar-link">Calendar</a>
         </li>
         <li class="nav-item">
-          <img class="sidebar-icons" src="../assets/delete.svg" alt="" style="height: 30px;width: 30px;">    
-          <a href="./HOD_inbox.html"class="nav-link text-white" id="inbox-link">Inbox</a>
+          <img class="sidebar-icons" src="../assets/notify.png" alt="" style="height: 30px;width: 30px;">    
+          <a href="./HOD_inbox.html" class="nav-link active text-white" id="inbox-link">Inbox</a>
         </li>
       </ul>   
     </div>
