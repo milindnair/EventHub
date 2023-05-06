@@ -107,7 +107,7 @@ function showCalendar(month, year) {
             const eventDesc = document.createElement("p");
             const eventDateTime = document.createElement("p");
             const eventVenue = document.createElement("p");
-            const eventLink = document.createElement("img");
+            const eventImage = document.createElement("img");
             const registerButton = document.createElement("button");
             const registerForm = document.getElementsByClassName("register_form")[0];
             const btn1 = document.getElementsByClassName("close")[1];
@@ -118,7 +118,9 @@ function showCalendar(month, year) {
             eventDateTime.innerHTML = "<b>Events starts at: </b>"+event.event_start_date + " "+ event.event_start_time + " - " +" and ends at: " + event.event_end_date + " " + event.event_end_time;
             eventVenue.innerHTML = "<b>Venue: </b>" + event.event_venue;
             
-            eventLink.src = event.event_link;
+            eventImage.src = event.event_link;
+            eventImage.style.width = "100%";
+            eventImage.style.height = "50%";
             registerButton.innerHTML = "Register Now";
             registerButton.classList.add("register_btn");
 
@@ -149,7 +151,8 @@ function showCalendar(month, year) {
             listItem.appendChild(eventDesc);
             listItem.appendChild(eventDateTime);
             listItem.appendChild(eventVenue);
-            listItem.appendChild(eventLink);
+            if(event.event_link != null) {listItem.appendChild(eventImage)}
+            else {listItem.appendChild(eventImage)};
             listItem.appendChild(document.createElement("br"));
             listItem.appendChild(registerButton);
 

@@ -70,12 +70,11 @@ $content = <<<HTML
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="58v23n"></button>
             <ul class="dropdown-menu" >
-              <li><a class="dropdown-item" href="#">Profile</a></li>
               <li><a class="dropdown-item"  id="sign-out">Sign Out</a></li>
             </ul>
           </div>
         <div class="profile-pic">        
-          <img src="../assets/mesa-logo.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">        
+          <img src="../assets/admin1.png" alt="" style="height: 100px;width: 100px;border-radius: 50%;">        
         </div>
         <h5>{$_SESSION['email']}</h5>
       </div>    
