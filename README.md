@@ -8,6 +8,11 @@ Difficulty in informing events, scattered information and loss of  attendance of
 Objective:\
 To provide a system informing students and faculty of our college about various events and upcoming workshops of our college
 
+Website Photos:\
+Home page : ![homepage](./assets/homepage.png)
+Create event : ![create_event](./assets/createevent.png)
+Event registration : ![register](./assets/apply.png)
+
 Team Members :\
 1	Milind Nair 1601012120\
 2	Anurag Pandey 16010121129\
